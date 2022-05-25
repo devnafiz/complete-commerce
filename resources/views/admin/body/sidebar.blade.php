@@ -209,7 +209,9 @@
 								<a class="items-list3" href="form-registration.html">Sign Up</a>
 								<a class="items-list3" href="form-forgot-password.html">Forgot Password</a>
 							</div>-->
-							
+							<a class="items-list1" href="privacy-policy.html">Category</a>
+							<a class="items-list1" href="{{route('all.brand')}}">Brand View</a>
+							<a class="items-list1" href="privacy-policy.html">Privacy Policy</a>
 							<a class="items-list1" href="privacy-policy.html">Privacy Policy</a>
 							<a class="items-list1" href="pricing-tables.html">Pricing</a>
 							<a class="items-list1" href="coming-soon.html">Coming Soon</a>
