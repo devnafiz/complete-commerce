@@ -10,7 +10,7 @@ use Image;
 
 class CategoryController extends Controller
 {
-    public function BrandAdd(){
+    public function CategoryAdd(){
 
        return view('admin.category.category_add');
 

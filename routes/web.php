@@ -100,6 +100,8 @@ Route::get('/delete/{id}', [CategoryController::class, 'CategoryDelete'])->name(
 
 // Admin Sub Category All Routes
 
+Route::get('/sub/add', [SubCategoryController::class, 'SubCategoryAdd'])->name('add.subcategory');
+
 Route::get('/sub/view', [SubCategoryController::class, 'SubCategoryView'])->name('all.subcategory');
 
 Route::post('/sub/store', [SubCategoryController::class, 'SubCategoryStore'])->name('subcategory.store');

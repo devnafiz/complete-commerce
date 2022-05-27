@@ -212,7 +212,7 @@
 							<a class="items-list1" href="privacy-policy.html">Category</a>
 							<a class="items-list1" href="{{route('all.brand')}}">Brand View</a>
 							<a class="items-list1" href="{{route('all.category')}}">Category View</a>
-							<a class="items-list1" href="privacy-policy.html">Privacy Policy</a>
+							<a class="items-list1" href="{{route('all.subcategory')}}">SubCategory View</a>
 							<a class="items-list1" href="pricing-tables.html">Pricing</a>
 							<a class="items-list1" href="coming-soon.html">Coming Soon</a>
 							<a class="items-list1" href="404.html">404</a>

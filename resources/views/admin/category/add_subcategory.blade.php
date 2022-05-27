@@ -26,7 +26,7 @@
 
 						<div class="col">
 							<div class="heading-messages">
-								<h3>Cruise Listing</h3>
+								<h3>Sub Category Listing</h3>
 							</div><!-- End heading-messages -->
 						</div><!-- End column -->
 						<div class="col-md-4">
@@ -45,18 +45,39 @@
 						<div class="row">
 							<div class="col">
 								<div class="details-text">
-									<h4>Add Slider</h4>
+									<h4>Add Sub Category</h4>
 								</div><!-- end details-text -->
 							</div><!-- End column -->
 						</div><!-- end row -->
 						<div class="cruise-listing-form">
-							<form class="text-center" action="{{route('brand.store')}}" method="POST" enctype="multipart/form-data">
+							<form class="text-center" action="{{route('subcategory.store')}}" method="POST" enctype="multipart/form-data">
 								@csrf
+
+                                  <div class="form-row">
+									<div class="col-md">
+										<div class="form-group">
+											<label for="inputGroupSelect00" class="">Title English:</label>
+										<select class="form-control" id="sub category" name="category_id">
+
+											<option value="">Select Category</option>
+                                             @foreach($categories as $k=>$val)
+											<option value="{{$val->id}}">{{$val->category_name_en}}</option>
+
+											@endforeach
+
+											
+
+										</select>
+										</div><!-- end form-group -->
+									</div><!-- end column -->
+									
+								</div><!-- end form-row -->
+
 								<div class="form-row">
 									<div class="col-md">
 										<div class="form-group">
 											<label for="inputGroupSelect00" class="">Title English:</label>
-											<input type="text" class="form-control" required id="inputGroupSelect00" name="brand_name_en">
+											<input type="text" class="form-control" required id="inputGroupSelect00" name="subcategory_name_en">
 										</div><!-- end form-group -->
 									</div><!-- end column -->
 									
@@ -66,21 +87,21 @@
 									<div class="col-md">
 										<div class="form-group">
 											<label for="inputGroupSelect00" class="">Title Hindi:</label>
-											<input type="text" class="form-control" required id="inputGroupSelect00" name="brand_name_hin" >
+											<input type="text" class="form-control" required id="inputGroupSelect00" name="subcategory_name_hin" >
 										</div><!-- end form-group -->
 									</div><!-- end column -->
 									
 								</div><!-- end form-row -->
 								
-								<div class="form-row">
+								<!--<div class="form-row">
 									<div class="col-md">
 										<div class="form-group">
 											<label for="inputGroupSelect00" class="">Image Upload:</label>
-											<input type="file" class="form-control" required id="inputGroupSelect00"  name="brand_image">
-										</div><!-- end form-group -->
-									</div><!-- end column -->
+											<input type="file" class="form-control" required id="inputGroupSelect00"  name="category_icon">
+										</div>
+									</div>
 									
-								</div><!-- end form-row -->
+								</div>-->
 								
 							
 

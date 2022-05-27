@@ -13,18 +13,19 @@ class SubCategoryController extends Controller
 
         $categories = Category::orderBy('category_name_en','ASC')->get();
         $subcategory = SubCategory::latest()->get();
-        return view('backend.category.subcategory_view',compact('subcategory','categories'));
+        return view('admin.category.subcategory_view',compact('subcategory','categories'));
 
     }
 
     public function SubCategoryAdd(){
 
          $data['categories'] = Category::orderBy('category_name_en','ASC')->get();
-         return view('backend.category.add_subcategory',$data);
+         return view('admin.category.add_subcategory',$data);
     }
 
 
      public function SubCategoryStore(Request $request){
+         // dd($request->all());
 
        $request->validate([
             'category_id' => 'required',
@@ -35,7 +36,7 @@ class SubCategoryController extends Controller
             'subcategory_name_en.required' => 'Input SubCategory English Name',
         ]);
 
-         
+       
 
        SubCategory::insert([
         'category_id' => $request->category_id,
