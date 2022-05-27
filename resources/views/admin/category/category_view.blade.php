@@ -25,7 +25,7 @@
 					<div class="row no-gutters">
 							<div class="col text-left">
 								<div class="add-new">
-									<a href="{{route('add.brand')}}">Add New<i class="fas fa-plus"></i></a>
+									<a href="{{route('add.category')}}">Add  Category<i class="fas fa-plus"></i></a>
 								</div><!-- End add-new-->
 							</div><!-- End column-->
 							
@@ -41,8 +41,8 @@
 											<th>#</th>
 											<th>Img</th>
 											
-											<th>Brand name eng</th>
-											<th>Brand name hindi</th>
+											<th>Category name eng</th>
+											<th>Category name hindi</th>
 											
 											<th>Status</th>
 											<th>Action</th>
@@ -52,15 +52,15 @@
 
 
 
-										@foreach($brands as $k=>$val)
+										@foreach($categories as $k=>$val)
 
 										<tr>
 											<td>110</td>
 											<td><img src="images/cruise3.jpg" alt="table-img"
 													class="img-fluid rounded-circle" width="40px"></td>
 											
-											<td><a href="#">{{$val->brand_name_en}}</a></td>
-											<td><a href="#">{{$val->brand_name_hin}}</a></td>
+											<td><a href="#">{{$val->category_name_en}}</a></td>
+											<td><a href="#">{{$val->category_name_hin}}</a></td>
 											
 											<td class="active"><a href="#">Active</a></td>
 											<td>

@@ -70,6 +70,8 @@ Route::post('/update/change/password', [AdminProfileController::class, 'AdminUpd
 
 Route::prefix('brand')->group(function(){
 
+ Route::get('/add', [BrandController::class, 'BrandAdd'])->name('add.brand');
+
 Route::get('/view', [BrandController::class, 'BrandView'])->name('all.brand');
 
 Route::post('/store', [BrandController::class, 'BrandStore'])->name('brand.store');
@@ -85,6 +87,7 @@ Route::get('/delete/{id}', [BrandController::class, 'BrandDelete'])->name('brand
 // Admin Category all Routes  
 Route::prefix('category')->group(function(){
 
+Route::get('/add',[CategoryController::class,'CategoryAdd'])->name('add.category');
 Route::get('/view', [CategoryController::class, 'CategoryView'])->name('all.category');
 
 Route::post('/store', [CategoryController::class, 'CategoryStore'])->name('category.store');
