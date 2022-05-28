@@ -8,6 +8,8 @@ use App\Http\Controllers\backend\AdminProfileController;
 use App\Http\Controllers\backend\BrandController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\SubCategoryController;
+
+use App\Http\Controllers\backend\CouponController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -111,4 +113,23 @@ Route::get('/sub/edit/{id}', [SubCategoryController::class, 'SubCategoryEdit'])-
 Route::post('/update', [SubCategoryController::class, 'SubCategoryUpdate'])->name('subcategory.update');
 
 Route::get('/sub/delete/{id}', [SubCategoryController::class, 'SubCategoryDelete'])->name('subcategory.delete');
+});
+
+
+
+
+Route::prefix('coupons')->group(function(){
+
+
+Route::get('/add', [CouponController::class, 'CouponAdd'])->name('admin.add.coupon');
+
+Route::get('/view', [CouponController::class, 'CouponView'])->name('admin.manage-coupon');
+
+Route::post('/store', [CouponController::class, 'CouponStore'])->name('coupon.store');
+
+Route::get('/edit/{id}', [CouponController::class, 'CouponEdit'])->name('coupon.edit');
+Route::post('/update/{id}', [CouponController::class, 'CouponUpdate'])->name('coupon.update');
+
+Route::get('/delete/{id}', [CouponController::class, 'CouponDelete'])->name('coupon.delete');
+ 
 });

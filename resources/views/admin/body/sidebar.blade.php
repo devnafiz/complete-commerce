@@ -117,14 +117,12 @@
 						<a href="#booking" class="items-list" data-toggle="collapse" aria-expanded="false">
 							<span><i class="fas fa-suitcase-rolling" data-toggle="tooltip" data-html="true"
 									title="Bookings"></i></span>
-							<span class="items-list-text">Booking</span>
+							<span class="items-list-text">Coupon</span>
 							<span><i class="fa fa-chevron-down arrow"></i></span>
 						</a>
 						<div class="collapse sub-menu" id="booking">
-							<a class="items-list1" href="bookings.html">All</a>
-							<a class="items-list1" href="bookings-approved.html">Approved</a>
-							<a class="items-list1" href="bookings-pending.html">Pending</a>
-							<a class="items-list1" href="bookings-cancelled.html">Cancelled</a>
+							<a class="items-list1" href="{{route('admin.manage-coupon')}}"> Coupon</a>
+							
 						</div><!-- End sub-menu -->
 					</li>
 					<li class="nav-item">
