@@ -68,11 +68,11 @@
 							<a href="#Cruise-Listing" class="items-list2" data-toggle="collapse" aria-expanded="false">
 								<span><i class="fas fa-anchor" data-toggle="tooltip" data-html="true"
 										title="Cruise"></i></span>
-								<span class="items-list-text">Cruise Listing</span>
+								<span class="items-list-text">Product</span>
 								<span><i class="fa fa-chevron-down arrow"></i></span>
 							</a>
 							<div class="collapse sub-sub-menu" id="Cruise-Listing">
-								<a class="items-list3" href="listing-cruise-create.html">Create</a>
+								<a class="items-list3" href="listing-cruise-create.html">Product View</a>
 								<a class="items-list3" href="listing-cruise-all.html">All</a>
 								<a class="items-list3" href="listing-cruise-active.html">Active</a>
 								<a class="items-list3" href="listing-cruise-drafts.html">Drafts</a>

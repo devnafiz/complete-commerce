@@ -10,6 +10,8 @@ use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\SubCategoryController;
 
 use App\Http\Controllers\backend\CouponController;
+
+use App\Http\Controllers\backend\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,7 +24,14 @@ use App\Http\Controllers\backend\CouponController;
 */
 
 Route::get('/', function () {
+
+
     return view('welcome');
+});
+Route::get('/test', function () {
+
+    
+   app()->make('first_app_bind');
 });
 
 Route::middleware([
@@ -133,3 +142,32 @@ Route::post('/update/{id}', [CouponController::class, 'CouponUpdate'])->name('co
 Route::get('/delete/{id}', [CouponController::class, 'CouponDelete'])->name('coupon.delete');
  
 });
+
+
+// Admin Products All Routes 
+
+Route::prefix('product')->group(function(){
+
+Route::get('/add', [ProductController::class, 'AddProduct'])->name('add-product');
+
+Route::post('/store', [ProductController::class, 'StoreProduct'])->name('product-store');
+Route::get('/manage', [ProductController::class, 'ManageProduct'])->name('manage-product');
+
+Route::get('/edit/{id}', [ProductController::class, 'EditProduct'])->name('product.edit');
+
+Route::post('/data/update', [ProductController::class, 'ProductDataUpdate'])->name('product-update');
+
+Route::post('/image/update', [ProductController::class, 'MultiImageUpdate'])->name('update-product-image');
+
+Route::post('/thambnail/update', [ProductController::class, 'ThambnailImageUpdate'])->name('update-product-thambnail');
+
+Route::get('/multiimg/delete/{id}', [ProductController::class, 'MultiImageDelete'])->name('product.multiimg.delete');
+
+Route::get('/inactive/{id}', [ProductController::class, 'ProductInactive'])->name('product.inactive');
+
+Route::get('/active/{id}', [ProductController::class, 'ProductActive'])->name('product.active');
+
+Route::get('/delete/{id}', [ProductController::class, 'ProductDelete'])->name('product.delete');
+ 
+});
+
