@@ -25,7 +25,7 @@
 					<div class="row no-gutters">
 							<div class="col text-left">
 								<div class="add-new">
-									<a href="{{route('add.brand')}}">Add Product<i class="fas fa-plus"></i></a>
+									<a href="{{route('add-product')}}">Add Product<i class="fas fa-plus"></i></a>
 								</div><!-- End add-new-->
 							</div><!-- End column-->
 							

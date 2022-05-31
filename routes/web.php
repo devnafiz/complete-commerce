@@ -122,6 +122,9 @@ Route::get('/sub/edit/{id}', [SubCategoryController::class, 'SubCategoryEdit'])-
 Route::post('/update', [SubCategoryController::class, 'SubCategoryUpdate'])->name('subcategory.update');
 
 Route::get('/sub/delete/{id}', [SubCategoryController::class, 'SubCategoryDelete'])->name('subcategory.delete');
+
+Route::get('/subcategory/ajax/{category_id}', [SubCategoryController::class, 'GetSubCategory']);
+
 });
 
 
@@ -149,6 +152,7 @@ Route::get('/delete/{id}', [CouponController::class, 'CouponDelete'])->name('cou
 Route::prefix('product')->group(function(){
 
 Route::get('/add', [ProductController::class, 'AddProduct'])->name('add-product');
+Route::get('/products/all', [ProductController::class, 'AllProduct'])->name('all.product');
 
 Route::post('/store', [ProductController::class, 'StoreProduct'])->name('product-store');
 Route::get('/manage', [ProductController::class, 'ManageProduct'])->name('manage-product');

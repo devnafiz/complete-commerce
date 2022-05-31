@@ -72,7 +72,7 @@
 								<span><i class="fa fa-chevron-down arrow"></i></span>
 							</a>
 							<div class="collapse sub-sub-menu" id="Cruise-Listing">
-								<a class="items-list3" href="listing-cruise-create.html">Product View</a>
+								<a class="items-list3" href="{{route('all.product')}}">Product View</a>
 								<a class="items-list3" href="listing-cruise-all.html">All</a>
 								<a class="items-list3" href="listing-cruise-active.html">Active</a>
 								<a class="items-list3" href="listing-cruise-drafts.html">Drafts</a>
