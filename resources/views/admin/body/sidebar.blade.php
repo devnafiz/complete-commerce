@@ -84,11 +84,11 @@
 							<a href="#Car-Listing" class="items-list2" data-toggle="collapse" aria-expanded="false">
 								<span><i class="fas fa-car-alt" data-toggle="tooltip" data-html="true"
 										title="Car"></i></span>
-								<span class="items-list-text">Car Listing</span>
+								<span class="items-list-text">Blog</span>
 								<span><i class="fa fa-chevron-down arrow"></i></span>
 							</a>
 							<div class="collapse sub-sub-menu" id="Car-Listing">
-								<a class="items-list3" href="listing-car-create.html">Create</a>
+								<a class="items-list3" href="{{route('blog.category')}}">Blog Category</a>
 								<a class="items-list3" href="listing-car-all.html">All</a>
 								<a class="items-list3" href="listing-car-active.html">Active</a>
 								<a class="items-list3" href="listing-car-drafts.html">Drafts</a>

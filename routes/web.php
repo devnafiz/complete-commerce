@@ -12,6 +12,7 @@ use App\Http\Controllers\backend\SubCategoryController;
 use App\Http\Controllers\backend\CouponController;
 
 use App\Http\Controllers\backend\ProductController;
+use App\Http\Controllers\backend\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -174,4 +175,30 @@ Route::get('/active/{id}', [ProductController::class, 'ProductActive'])->name('p
 Route::get('/delete/{id}', [ProductController::class, 'ProductDelete'])->name('product.delete');
  
 });
+
+
+
+// Admin Blog  Routes 
+Route::prefix('blog')->group(function(){
+ Route::get('/category/add', [PostController::class, 'BlogCategoryAdd'])->name('blog.category.add');
+
+Route::get('/category', [PostController::class, 'BlogCategory'])->name('blog.category');
+
+Route::post('/store', [PostController::class, 'BlogCategoryStore'])->name('blogcategory.store');
+
+Route::get('/category/edit/{id}', [PostController::class, 'BlogCategoryEdit'])->name('blog.category.edit');
+
+
+Route::post('/update', [PostController::class, 'BlogCategoryUpdate'])->name('blogcategory.update');
+
+// Admin View Blog Post Routes 
+
+Route::get('/list/post', [PostController::class, 'ListBlogPost'])->name('list.post');
+
+Route::get('/add/post', [PostController::class, 'AddBlogPost'])->name('add.post');
+
+Route::post('/post/store', [PostController::class, 'BlogPostStore'])->name('post-store');
+
+});
+
 
