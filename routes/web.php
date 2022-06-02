@@ -13,6 +13,13 @@ use App\Http\Controllers\backend\CouponController;
 
 use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\PostController;
+
+
+
+
+
+
+use App\Http\Controllers\FrontendController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,11 +31,7 @@ use App\Http\Controllers\backend\PostController;
 |
 */
 
-Route::get('/', function () {
 
-
-    return view('welcome');
-});
 Route::get('/test', function () {
 
     
@@ -200,5 +203,33 @@ Route::get('/add/post', [PostController::class, 'AddBlogPost'])->name('add.post'
 Route::post('/post/store', [PostController::class, 'BlogPostStore'])->name('post-store');
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Front end 
+
+
+
+Route::get('/',[FrontendController::class,'index'])->name('front.index');
 
 

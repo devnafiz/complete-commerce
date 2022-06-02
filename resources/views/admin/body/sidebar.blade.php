@@ -89,8 +89,8 @@
 							</a>
 							<div class="collapse sub-sub-menu" id="Car-Listing">
 								<a class="items-list3" href="{{route('blog.category')}}">Blog Category</a>
-								<a class="items-list3" href="listing-car-all.html">All</a>
-								<a class="items-list3" href="listing-car-active.html">Active</a>
+								<a class="items-list3" href="{{route('add.post')}}">Blog Add</a>
+								<a class="items-list3" href="{{route('list.post')}}">Blog List</a>
 								<a class="items-list3" href="listing-car-drafts.html">Drafts</a>
 								<a class="items-list3" href="listing-car-expired.html">Expired</a>
 								<a class="items-list3" href="listing-car-featured.html">Featured</a>

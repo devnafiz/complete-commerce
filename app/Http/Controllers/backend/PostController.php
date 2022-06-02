@@ -42,4 +42,38 @@ class PostController extends Controller
      return redirect()->route('blog.category')->with('success','Successfully  insert');
 
    }
+
+
+
+
+
+
+
+
+
+
+
+
+   /// blog list
+   public function ListBlogPost(){
+
+    $data['categories']=DB::table('post_category')->get();
+     $data['Blogs']=DB::table('posts')->latest()->get();
+
+    return view('admin.blog.blog_view',$data);
+
+   }
+
+   public function AddBlogPost(){
+$data['categories']=DB::table('post_category')->get();
+  return view('admin.blog.blog_add',$data);
+
+   }
+
+   public function BlogPostStore(Request $request){
+
+
+
+
+   }
 }
