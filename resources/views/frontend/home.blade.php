@@ -122,15 +122,40 @@
 									<div class="deals_content">
 										<div class="deals_info_line d-flex flex-row justify-content-start">
 											<div class="deals_item_category"><a href="#">{{$ht->brand_name_en}}</a></div>
-											<div class="deals_item_price_a ml-auto">$300</div>
+
+											@if($ht->discount_price==Null)
+
+
+											@else
+
+											<div class="deals_item_price_a ml-auto">${{$ht->selling_price}}</div>
+											@endif
+
+											
 										</div>
 										<div class="deals_info_line d-flex flex-row justify-content-start">
 											<div class="deals_item_name">{{$ht->product_name_en}}</div>
-											<div class="deals_item_price ml-auto">$225</div>
+
+												@if($ht->discount_price==Null)
+                                              <div class="deals_item_price ml-auto">${{$ht->selling_price}}}</div>
+
+											@else
+											@endif
+											
+											@if($ht->discount_price!==Null)
+                                              <div class="deals_item_price ml-auto">${{$ht->discount_price}}</div>
+
+											@else
+											@endif
+
+											
+
+
+
 										</div>
 										<div class="available">
 											<div class="available_line d-flex flex-row justify-content-start">
-												<div class="available_title">Available: <span>6</span></div>
+												<div class="available_title">Available: <span>{{$ht->product_qty }}</span></div>
 												<div class="sold_title ml-auto">Already sold: <span>28</span></div>
 											</div>
 											<div class="available_bar"><span style="width:17%"></span></div>
