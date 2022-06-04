@@ -84,8 +84,8 @@
                         <div class="contact_form_title">Sign Up</div>
 
 
-        <form action="#" id="contact_form">
-                            
+        <form action="{{route('register')}}" id="contact_form" method="POST">
+                         @csrf   
                             <div class="form-group">
                                  <input type="text"  class="form-control " placeholder="Your Full name" required="required" data-error="Name is required." name="name">
                             </div> 
