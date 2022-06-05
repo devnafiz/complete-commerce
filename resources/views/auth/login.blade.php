@@ -60,7 +60,8 @@
                         <div class="contact_form_title">Signin</div>
 
 
-        <form action="#" id="contact_form">
+        <form action="{{route('login')}}" id="contact_form" method="POST">
+               @csrf
                            
                             <div class="form-group">
                                  <input type="text"  class="form-control " placeholder="Your name" required="required" data-error="Name is required." name="email">
@@ -73,12 +74,19 @@
                             </div>
                         </form>
                       <br>
+
+                        @if (Route::has('password.request'))
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                        {{ __('Forgot your password?') }}
+                    </a>
+                @endif
+
                       <button type="submit" class="btn btn-block btn-primary">Login with Facebook</button>
                         <button type="submit" class="btn btn-block btn-danger">Login with Google</button>
 
                     </div>
                 </div>
-
+                    
                 <div class="col-lg-5 offset-lg-1" style="border:1px solid gray; padding: 20px;">
                     <div class="contact_form_container">
                         <div class="contact_form_title">Sign Up</div>

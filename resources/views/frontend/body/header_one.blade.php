@@ -29,10 +29,42 @@
 									</li>
 								</ul>
 							</div>
+
 							<div class="top_bar_user">
-								<div class="user_icon"><img src="images/user.svg" alt=""></div>
-								<div><a href="#">Register</a></div>
-								<div><a href="#">Sign in</a></div>
+
+							@guest
+							<div><a href="#">Register</a></div>
+							<div><a href="#">Sign in</a></div>
+							@else
+                              <div class="user_icon"><img src="images/user.svg" alt=""></div>
+								<div><a href="#">Profuile</a></div>
+								<div>  
+
+                                 	<ul class="standard_dropdown top_bar_dropdown">
+
+
+								 <li>	<a href="#">{{ Auth::user()->name }}<i class="fas fa-chevron-down"></i></a>
+
+									    <ul>
+											<li><a href="#">Wishlist</a></li>
+											<li><a href="#">Checkout</a></li>
+												<li> <form method="POST" action="{{ route('logout') }}" x-data>
+		                                @csrf
+
+		                                <x-jet-dropdown-link href="{{ route('logout') }}"
+		                                         @click.prevent="$root.submit();">
+		                                    {{ __('Log Out') }}
+		                                </x-jet-dropdown-link>
+		                                      </form>
+	                                         </li>
+										</ul>
+
+									</li>
+								</ul>
+
+								</div>
+							@endguest
+								
 							</div>
 						</div>
 					</div>
