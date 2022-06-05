@@ -36,14 +36,14 @@
 							<div><a href="#">Register</a></div>
 							<div><a href="#">Sign in</a></div>
 							@else
-                              <div class="user_icon"><img src="images/user.svg" alt=""></div>
+                              <div class="user_icon"><img src="{{asset('frontend/images/user.svg')}}" alt=""></div>
 								<div><a href="#">Profuile</a></div>
 								<div>  
 
                                  	<ul class="standard_dropdown top_bar_dropdown">
 
 
-								 <li>	<a href="#">{{ Auth::user()->name }}<i class="fas fa-chevron-down"></i></a>
+								 <li><a href="#">{{ Auth::user()->name }}<i class="fas fa-chevron-down"></i></a>
 
 									    <ul>
 											<li><a href="#">Wishlist</a></li>
