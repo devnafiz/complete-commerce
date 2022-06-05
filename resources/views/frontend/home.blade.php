@@ -237,7 +237,9 @@
 											<button class="product_cart_button">Add to Cart</button>
 										</div>
 									</div>
-									<div class="product_fav"><i class="fas fa-heart"></i></div>
+                                     <a href="{{route('add.wishlist',$row->id)}}">
+									<div class="product_fav"><i class="fas fa-heart"></i></div></a>
+
 									<ul class="product_marks">
 
 										@php

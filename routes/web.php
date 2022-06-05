@@ -14,6 +14,8 @@ use App\Http\Controllers\backend\CouponController;
 use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\PostController;
 
+use App\Http\Controllers\WishlistController;
+
 
 
 
@@ -232,4 +234,5 @@ Route::post('/post/store', [PostController::class, 'BlogPostStore'])->name('post
 
 Route::get('/',[FrontendController::class,'index'])->name('front.index');
 
+Route::get('/add/wishlist/{id}',[WishlistController::class,'addWishlist'])->name('add.wishlist');
 
