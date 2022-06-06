@@ -24,27 +24,13 @@ class WishlistController extends Controller
 
             if($check){
 
-                $notification=array(
-
-                         'message'=>'Already has been wishlisted',
-                         'alert-type'=>'error'
-
-                );
-
-                return redirect()->back()->with($notification);
-
+                  return \Response::json(['error'=>'That product already has on wishlist']);
                }else{
 
               DB::table('wishlists')->insert($data);
+               return \Response::json(['success'=>'Product add wishlists']);
 
-                  $notification=array(
-
-                         'message'=>'Add to wishlisted',
-                         'alert-type'=>'success'
-
-                );
-
-                return redirect()->back()->with($notification);
+                
              }
 
 
@@ -54,8 +40,8 @@ class WishlistController extends Controller
 
 
           }else{
-
-            return redirect()->route('login')->with('error','please login');
+              return \Response::json(['error'=>'At first login Your account']);
+            //return redirect()->route('login')->with('error','please login');
           }
 
      }

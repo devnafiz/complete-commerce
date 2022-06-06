@@ -239,8 +239,10 @@
 											<button class="product_cart_button">Add to Cart</button>
 										</div>
 									</div>
-                                     <a href="{{route('add.wishlist',$row->id)}}">
-									<div class="product_fav"><i class="fas fa-heart"></i></div></a>
+                                    <button class="addwishlist" data-id="{{$row->id}}">
+                                    	<div class="product_fav"><i class="fas fa-heart"></i></div>
+                                    </button>
+									
 
 									<ul class="product_marks">
 
@@ -3704,6 +3706,8 @@
 <script src="{{asset('frontend/plugins/slick-1.8.0/slick.js')}}"></script>
 <script src="{{asset('frontend/plugins/easing/easing.js')}}"></script>
 <script src="{{asset('frontend/js/custom.js')}}"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 <script>
@@ -3727,6 +3731,70 @@
     break; 
  }
  @endif 
+</script>
+
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+
+           $('.addwishlist').on('click',function(){
+
+              var id=$(this).data('id');
+              //alert(id);
+
+              if(id){
+
+              	$.ajax({
+
+                        url:"{{url('add/wishlist/')}}/"+id,
+                        type:"GET",
+                        dataType:"json",
+                        success: function(data){
+
+                           const Toast = Swal.mixin({
+									  toast: true,
+									  position: 'top-end',
+									  showConfirmButton: false,
+									  timer: 3000,
+									  timerProgressBar: true,
+									  didOpen: (toast) => {
+									    toast.addEventListener('mouseenter', Swal.stopTimer)
+									    toast.addEventListener('mouseleave', Swal.resumeTimer)
+									  }
+									})
+
+                               if($.isEmptyObject(data.error)){
+
+                                Toast.fire({
+									  icon: 'success',
+									  title: data.success
+									})
+
+                               }else{
+
+                               	   Toast.fire({
+									  icon: 'error',
+									  title: data.error
+									})
+                               }
+
+									
+
+
+                        },
+
+              	});
+              }else{
+
+              	alert('no submitted');
+              }
+
+
+           });
+
+
+
+	});
 </script>
 
 </body>

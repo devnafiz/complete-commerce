@@ -234,5 +234,5 @@ Route::post('/post/store', [PostController::class, 'BlogPostStore'])->name('post
 
 Route::get('/',[FrontendController::class,'index'])->name('front.index');
 
-Route::get('/add/wishlist/{id}',[WishlistController::class,'addWishlist'])->name('add.wishlist');
+Route::get('add/wishlist/{id}',[WishlistController::class,'addWishlist'])->name('add.wishlist');
 
