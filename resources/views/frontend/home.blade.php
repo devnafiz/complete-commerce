@@ -236,7 +236,7 @@
 												<input type="radio" name="product_color" style="background:#000000">
 												<input type="radio" name="product_color" style="background:#999999">
 											</div>
-											<button class="product_cart_button">Add to Cart</button>
+											<button class="product_cart_button addcart" data-id="{{$row->id}}">Add to Cart</button>
 										</div>
 									</div>
                                     <button class="addwishlist" data-id="{{$row->id}}">
@@ -3731,6 +3731,71 @@
     break; 
  }
  @endif 
+</script>
+
+
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+
+           $('.addcart').on('click',function(){
+
+              var id=$(this).data('id');
+              //alert(id);
+
+              if(id){
+
+              	$.ajax({
+
+                        url:"{{url('/add/to/cart')}}/"+id,
+                        type:"GET",
+                        dataType:"json",
+                        success: function(data){
+
+                           const Toast = Swal.mixin({
+									  toast: true,
+									  position: 'top-end',
+									  showConfirmButton: false,
+									  timer: 3000,
+									  timerProgressBar: true,
+									  didOpen: (toast) => {
+									    toast.addEventListener('mouseenter', Swal.stopTimer)
+									    toast.addEventListener('mouseleave', Swal.resumeTimer)
+									  }
+									})
+
+                               if($.isEmptyObject(data.error)){
+
+                                Toast.fire({
+									  icon: 'success',
+									  title: data.success
+									})
+
+                               }else{
+
+                               	   Toast.fire({
+									  icon: 'error',
+									  title: data.error
+									})
+                               }
+
+									
+
+
+                        },
+
+              	});
+              }else{
+
+              	alert('no submitted');
+              }
+
+
+           });
+
+
+
+	});
 </script>
 
 <script type="text/javascript">

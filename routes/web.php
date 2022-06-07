@@ -15,6 +15,7 @@ use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\PostController;
 
 use App\Http\Controllers\WishlistController;
+use App\Http\Controllers\CartController;
 
 
 
@@ -235,4 +236,6 @@ Route::post('/post/store', [PostController::class, 'BlogPostStore'])->name('post
 Route::get('/',[FrontendController::class,'index'])->name('front.index');
 
 Route::get('add/wishlist/{id}',[WishlistController::class,'addWishlist'])->name('add.wishlist');
+Route::get('add/to/cart/{id}',[CartController::class,'AddCart'])->name('add.cart');
+
 
