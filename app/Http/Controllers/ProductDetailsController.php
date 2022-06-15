@@ -10,6 +10,6 @@ class ProductDetailsController extends Controller
     public function productDetails($id,$product_name){
 
 
-
+     return view('frontend.product_details');
     }
 }

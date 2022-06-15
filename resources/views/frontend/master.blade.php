@@ -28,13 +28,13 @@
 
 	<!-- Home -->
 
-	<div class="home">
+	<!-- <div class="home">
 		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/shop_background.jpg"></div>
 		<div class="home_overlay"></div>
 		<div class="home_content d-flex flex-column align-items-center justify-content-center">
 			<h2 class="home_title">Technological Blog</h2>
 		</div>
-	</div>
+	</div> -->
 
 	<!-- Blog -->
   
@@ -60,6 +60,7 @@
 <script src="{{asset('frontend/plugins/parallax-js-master/parallax.min.js')}}"></script>
 <script src="{{asset('frontend/plugins/easing/easing.js')}}"></script>
 <script src="{{asset('frontend/js/blog_custom.js')}}"></script>
+@yield('extra_ja')
 </body>
 
 </html>
