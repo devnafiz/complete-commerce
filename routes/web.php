@@ -16,6 +16,7 @@ use App\Http\Controllers\backend\PostController;
 
 use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ProductDetailsController;
 
 
 
@@ -238,6 +239,11 @@ Route::get('/',[FrontendController::class,'index'])->name('front.index');
 Route::get('add/wishlist/{id}',[WishlistController::class,'addWishlist'])->name('add.wishlist');
 Route::get('add/to/cart/{id}',[CartController::class,'AddCart'])->name('add.cart');
 Route::get('/check',[CartController::class,'check'])->name('cart.check');
+
+
+Route::get('/product/details/{id}/{product_name}',[ProductDetailsController::class,'productDetails'])->name('product.details');
+
+
 
 
 

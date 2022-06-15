@@ -52,4 +52,10 @@ class CartController extends Controller
 
            return response()->json($content);
     }
+
+
+    public function productDetails(Request $request,$id){
+
+        
+    }
 }

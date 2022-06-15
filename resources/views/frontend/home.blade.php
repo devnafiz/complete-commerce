@@ -229,7 +229,7 @@
 										<div class="product_price discount">${{$row->discount_price}}<span>${{$row->selling_price}}</span></div>
 										@endif
 										
-										<div class="product_name"><div><a href="product.html">{{$row->product_name_en}}</a></div></div>
+										<div class="product_name"><div><a href="{{url('product/details/'.$row->id.'/'.$row->product_name_en)}}">{{$row->product_name_en}}</a></div></div>
 										<div class="product_extras">
 											<div class="product_color">
 												<input type="radio" checked name="product_color" style="background:#b19c83">
