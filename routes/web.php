@@ -237,5 +237,7 @@ Route::get('/',[FrontendController::class,'index'])->name('front.index');
 
 Route::get('add/wishlist/{id}',[WishlistController::class,'addWishlist'])->name('add.wishlist');
 Route::get('add/to/cart/{id}',[CartController::class,'AddCart'])->name('add.cart');
+Route::get('/check',[CartController::class,'check'])->name('cart.check');
+
 
 
