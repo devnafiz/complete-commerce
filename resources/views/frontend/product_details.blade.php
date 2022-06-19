@@ -15,7 +15,7 @@
 				<!-- Images -->
 				<div class="col-lg-2 order-lg-1 order-2">
 					<ul class="image_list">
-						<li data-image="{{asset('frontend/images/single_4.jpg')}}"><img src="{{asset('frontend/images/single_4.jpg')}}" alt=""></li>
+						<li data-image="{{asset($product->product_thambnail)}}"><img src="{{asset('frontend/images/single_4.jpg')}}" alt=""></li>
 						<li data-image="{{asset('frontend/images/single_2.jpg')}}"><img src="{{asset('frontend/images/single_2.jpg')}}" alt=""></li>
 						<li data-image="{{asset('frontend/images/single_3.jpg')}}"><img src="{{asset('frontend/images/single_3.jpg')}}" alt=""></li>
 					</ul>
@@ -29,10 +29,10 @@
 				<!-- Description -->
 				<div class="col-lg-5 order-3">
 					<div class="product_description">
-						<div class="product_category">Laptops</div>
-						<div class="product_name">MacBook Air 13</div>
+						<div class="product_category">{{$product->category_name_en}}</div>
+						<div class="product_name">{{$product->product_name_en}}</div>
 						<div class="rating_r rating_r_4 product_rating"><i></i><i></i><i></i><i></i><i></i></div>
-						<div class="product_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum. laoreet turpis, nec sollicitudin dolor cursus at. Maecenas aliquet, dolor a faucibus efficitur, nisi tellus cursus urna, eget dictum lacus turpis.</p></div>
+						<div class="product_text"><p>{{$product->short_descp_en }}</p></div>
 						<div class="order_info d-flex flex-row">
 							<form action="#">
 								<div class="clearfix" style="z-index: 1000;">
