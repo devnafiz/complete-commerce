@@ -40,7 +40,7 @@
 									<!-- Product Quantity -->
 									<div class="product_quantity clearfix">
 										<span>Quantity: </span>
-										<input id="quantity_input" type="text" pattern="[0-9]*" value="1">
+										<input id="quantity_input" type="text" pattern="[0-9]*" value="1" name="qty"> 
 										<div class="quantity_buttons">
 											<div id="quantity_inc_button" class="quantity_inc quantity_control"><i class="fas fa-chevron-up"></i></div>
 											<div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fas fa-chevron-down"></i></div>
@@ -48,7 +48,7 @@
 									</div>
 
 									<!-- Product Color -->
-									<ul class="product_color">
+									<!--<ul class="product_color">
 										<li>
 											<span>Color: </span>
 											<div class="color_mark_container"><div id="selected_color" class="color_mark"></div></div>
@@ -60,11 +60,54 @@
 												<li><div class="color_mark" style="background: #000000;"></div></li>
 											</ul>
 										</li>
-									</ul>
+									</ul>-->
+
+									<div class="row">
+										<div class="col-lg-6">
+                        <select class="form-control input-lg" name="color">
+                        	<option value="">select Color</option>
+                        	@foreach($product_color as $k=>$v)
+                        	<option value="{{$v}}">{{$v}}</option>
+                        	@endforeach
+                        </select>											
+
+										</div>
+										@if($product->product_size_en==NULL)
+
+										@else
+
+
+
+										<div class="col-lg-6">
+                        <select class="form-control input-lg" name="size">
+                        	<option value="">select size</option>
+                        	@foreach($product_size as $k=>$v)
+                        	<option value="{{$v}}">{{$v}}</option>
+                        	@endforeach
+                        </select>											
+
+										</div>
+
+										@endif
+									</div>
+
+									
 
 								</div>
+								<div class="row">
+									
 
-								<div class="product_price">$2000</div>
+										
+									</div>
+
+								<!-- <div class="product_price">$2000</div> -->
+								@if($product->discount_price==NULL)
+										<div class="product_price discount">${{$product->selling_price}}<span></span></div>
+
+										@else
+										<div class="product_price discount" ><span style="color: #df3b3b;">${{$product->discount_price}}</span>&nbsp<span>${{$product->selling_price}}</span></div>
+										@endif
+										
 								<div class="button_container">
 									<button type="button" class="button cart_button">Add to Cart</button>
 									<div class="product_fav"><i class="fas fa-heart"></i></div>
@@ -79,6 +122,43 @@
 		</div>
 	</div>
 
+   <div class="Viewed">
+   	 <div class="container">
+
+         <div class="row">
+         	 <div class="col">
+         	 	<div class="viewed_title_container">
+              	<div class="viewed_slider_container">
+																				 <!-- Nav tabs -->
+									<ul class="nav nav-tabs" id="myTab" role="tablist">
+									  <li class="nav-item" role="presentation">
+									    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Product Details</button>
+									  </li>
+									  <li class="nav-item" role="presentation">
+									    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Video link</button>
+									  </li>
+									  <li class="nav-item" role="presentation">
+									    <button class="nav-link" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages" type="button" role="tab" aria-controls="messages" aria-selected="false">Review</button>
+									  </li>
+									 
+									</ul>
+
+									<!-- Tab panes -->
+									<div class="tab-content">
+									  <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab" tabindex="0">...</div>
+									  <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...</div>
+									  <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab" tabindex="0">...</div>
+									  <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab" tabindex="0">...</div>
+									</div>
+
+								</div>
+         	 	</div>
+         	 </div>
+         	
+         </div>   	 	
+   	 </div>
+   	
+   </div>
 	<!-- Recently Viewed -->
 
 	<div class="viewed">
@@ -233,6 +313,18 @@
 
 
 
+<script>
+ const triggerTabList = document.querySelectorAll('#myTab button')
+triggerTabList.forEach(triggerEl => {
+  const tabTrigger = new bootstrap.Tab(triggerEl)
+
+  triggerEl.addEventListener('click', event => {
+    event.preventDefault()
+    tabTrigger.show()
+  })
+})
+
+</script>
 
 @endsection
 
