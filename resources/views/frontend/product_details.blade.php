@@ -34,7 +34,8 @@
 						<div class="rating_r rating_r_4 product_rating"><i></i><i></i><i></i><i></i><i></i></div>
 						<div class="product_text"><p>{{$product->short_descp_en }}</p></div>
 						<div class="order_info d-flex flex-row">
-							<form action="#">
+							<form action="{{url('cart/product/add/',$product->id)}}" method="POST">
+								@csrf
 								<div class="clearfix" style="z-index: 1000;">
 
 									<!-- Product Quantity -->
@@ -109,7 +110,7 @@
 										@endif
 										
 								<div class="button_container">
-									<button type="button" class="button cart_button">Add to Cart</button>
+									<button type="submit" class="button cart_button">Add to Cart</button>
 									<div class="product_fav"><i class="fas fa-heart"></i></div>
 								</div>
 								

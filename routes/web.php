@@ -243,6 +243,9 @@ Route::get('/check',[CartController::class,'check'])->name('cart.check');
 
 Route::get('/product/details/{id}/{product_name}',[ProductDetailsController::class,'productDetails'])->name('product.details');
 
+Route::post('cart/product/add/{id}',[ProductDetailsController::class,'addCart'])->name('product.cart');
+
+
 
 
 
