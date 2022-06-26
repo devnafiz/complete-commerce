@@ -249,6 +249,9 @@ Route::post('cart/product/add/{id}',[ProductDetailsController::class,'addCart'])
 Route::get('/product/cart',[CartController::class,'showCart'])->name('show.cart');
 
 
+Route::get('remove/cart/{rowId}',[CartController::class,'removeCart'])->name('remove.cart');
+
+
 
 
 

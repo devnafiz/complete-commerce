@@ -69,4 +69,12 @@ class CartController extends Controller
        return view('frontend.pages.cart',compact('cart'));
 
     }
+
+
+    public function removeCart($rowId){
+
+
+        Cart::remove($rowId);
+        return redirect()->back()->with('success','cart remove successfully');
+    }
 }
