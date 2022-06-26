@@ -246,6 +246,9 @@ Route::get('/product/details/{id}/{product_name}',[ProductDetailsController::cla
 Route::post('cart/product/add/{id}',[ProductDetailsController::class,'addCart'])->name('product.cart');
 
 
+Route::get('/product/cart',[CartController::class,'showCart'])->name('show.cart');
+
+
 
 
 

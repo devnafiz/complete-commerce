@@ -58,4 +58,15 @@ class CartController extends Controller
 
         
     }
+
+
+
+    public function showCart(){
+
+       $cart =Cart::content();
+
+
+       return view('frontend.pages.cart',compact('cart'));
+
+    }
 }
