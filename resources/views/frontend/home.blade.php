@@ -230,13 +230,22 @@
 										@endif
 										
 										<div class="product_name"><div><a href="{{url('product/details/'.$row->id.'/'.$row->product_name_en)}}">{{$row->product_name_en}}</a></div></div>
-										<div class="product_extras">
+										<!--<div class="product_extras">
 											<div class="product_color">
 												<input type="radio" checked name="product_color" style="background:#b19c83">
 												<input type="radio" name="product_color" style="background:#000000">
 												<input type="radio" name="product_color" style="background:#999999">
 											</div>
 											<button class="product_cart_button addcart" data-id="{{$row->id}}">Add to Cart</button>
+										</div>-->
+
+										<div class="product_extras">
+											<div class="product_color">
+												<input type="radio" checked name="product_color" style="background:#b19c83">
+												<input type="radio" name="product_color" style="background:#000000">
+												<input type="radio" name="product_color" style="background:#999999">
+											</div>
+											<button class="product_cart_button " data-id="{{$row->id}}" data-toggle="modal" data-target="#cartModal" onclick="productView(this.id)">Add to Cart</button>
 										</div>
 									</div>
                                     <button class="addwishlist" data-id="{{$row->id}}">
@@ -3692,6 +3701,98 @@
 	</div>
 
 	@include('frontend.body.footer')
+
+
+	<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+        <div class="row">
+        	   <div class="col-lg-4">
+        	   	<div class="card">
+        	   		
+        	   		<div class="card-body">
+        	   			<h5>product name</h5>
+        	   		</div>
+        	   		
+        	   	</div>
+        	   	
+        	   </div>
+        	   <div class="col-lg-4">
+        	   	<div class="card">
+        	   		
+        	   		<div class="card-body">
+        	   			<ul class="list-group">
+							  <li class="list-group-item">An item</li>
+							  <li class="list-group-item">A second item</li>
+							  <li class="list-group-item">A third item</li>
+							  <li class="list-group-item">A fourth item</li>
+							  <li class="list-group-item">And a fifth one</li>
+							</ul>
+        	   			
+        	   		</div>
+        	   		
+        	   	</div>
+        	   	
+        	   </div>
+        	   <div class="col-lg-4">
+        	   	<div class="card">
+        	   		
+        	   		<div class="card-body">
+        	   			<div class="form-group">
+        	   				<label>color</label>
+        	   				<select class="form-control">
+        	   					<option>option one</option>
+        	   					<option>option one</option>
+        	   					<option>option one</option>
+        	   				</select>
+        	   				
+        	   			</div>
+        	   			<div class="form-group">
+        	   				<label>size</label>
+        	   				<select class="form-control">
+        	   					<option>option one</option>
+        	   					<option>option one</option>
+        	   					<option>option one</option>
+        	   				</select>
+        	   				
+        	   			</div>
+        	   			<div class="form-group">
+        	   				<label>Quantity</label>
+        	   				<input type="number" class="form-control" name="qty" value="1">
+        	   				
+        	   			</div>
+        	   			<button type="submit" class="btn btn-success btn-sm">add to cart</button>
+        	   			
+        	   		</div>
+        	   		
+        	   	</div>
+        	   	
+        	   </div>
+        	
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+
 </div>
 
 <script src="{{asset('frontend/js/jquery-3.3.1.min.js')}}"></script>
