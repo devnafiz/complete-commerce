@@ -64,7 +64,7 @@ class CartController extends Controller
     public function showCart(){
 
        $cart =Cart::content();
-
+          //dd($cart);
 
        return view('frontend.pages.cart',compact('cart'));
 
