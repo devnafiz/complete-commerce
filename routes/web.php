@@ -250,6 +250,7 @@ Route::get('/product/cart',[CartController::class,'showCart'])->name('show.cart'
 
 
 Route::get('remove/cart/{rowId}',[CartController::class,'removeCart'])->name('remove.cart');
+Route::post('/update/cart/item',[CartController::class,'updateCartItem'])->name('update.cart.item');
 
 
 

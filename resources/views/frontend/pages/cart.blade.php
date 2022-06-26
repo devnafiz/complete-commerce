@@ -39,8 +39,16 @@
 										@endif
 										
 										<div class="cart_item_quantity cart_info_col">
-											<div class="cart_item_title">Quantity</div>
-											<div class="cart_item_text">{{$val->qty}}</div>
+											<div class="cart_item_title">Quantity</div><br>
+
+											<form method="POST" action="{{route('update.cart.item')}}">
+												@csrf
+												<input type="hidden" name="productId" value="{{$val->rowId}}">
+												<input type="text" name="qty" value="{{$val->qty}}" style="width: 50px;">
+												<button class="btn btn-success btn-sm" type="submit"><i class="fas fa-check-square"></i></button>
+
+											</form>
+											
 										</div>
 										<div class="cart_item_price cart_info_col">
 											<div class="cart_item_title">Price</div>
