@@ -39,27 +39,39 @@ class ProductDetailsController extends Controller
         if($product->discount_price==NULL){
             $data['id']=$product->id;
             $data['name']=$product->product_name_en;
-            $data['qty']=1;
+            $data['qty']=$request->qty;
             $data['price']=$product->selling_price;
             $data['weight']=1;
-            $data['options']['size']='';
-            $data['options']['color']='';
+            $data['options']['size']=$request->size;
+            $data['options']['color']=$request->color;
             $data['options']['image']=$product->product_thambnail;
             Cart::add($data);
-           return \Response::json(['success'=>'Product add to Cart']);
+           //return \Response::json(['success'=>'Product add to Cart']);
+             $notification = array(
+            'message' => 'Add product Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
 
         }else{
 
               $data['id']=$product->id;
             $data['name']=$product->product_name_en;
-            $data['qty']=1;
+            $data['qty']=$request->qty;
             $data['price']=$product->discount_price;
             $data['weight']=1;
             $data['options']['image']=$product->product_thambnail;
-             $data['options']['size']='';
-            $data['options']['color']='';
+             $data['options']['size']=$request->size;
+            $data['options']['color']=$request->color;
             Cart::add($data);
-            return \Response::json(['success'=>'Product add to Cart']);
+            //return \Response::json(['success'=>'Product add to Cart']);
+               $notification = array(
+            'message' => 'Add product Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
 
 
         }
