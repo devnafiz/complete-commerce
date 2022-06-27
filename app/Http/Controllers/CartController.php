@@ -118,4 +118,42 @@ class CartController extends Controller
                 ));
 
     }
+
+    public function productInsertCart(Request $request){
+
+        $product_id=$request->product_id;
+         $product =DB::table('products')->where('id',$product_id)->first();
+        $data =array();
+
+        if($product->discount_price==NULL){
+            $data['id']=$product->id;
+            $data['name']=$product->product_name_en;
+            $data['qty']=$request->qty;
+            $data['price']=$product->selling_price;
+            $data['weight']=1;
+            $data['options']['size']=$request->size;
+            $data['options']['color']=$request->color;
+            $data['options']['image']=$product->product_thambnail;
+            Cart::add($data);
+          // return \Response::json(['success'=>'Product add to Cart']);
+             return redirect()->back()->with('success','cart update successfully');
+
+        }else{
+
+              $data['id']=$product->id;
+            $data['name']=$product->product_name_en;
+            $data['qty']=$request->qty;
+            $data['price']=$product->discount_price;
+            $data['weight']=1;
+            $data['options']['image']=$product->product_thambnail;
+             $data['options']['size']=$request->size;
+            $data['options']['color']=$request->color;
+            Cart::add($data);
+            //return \Response::json(['success'=>'Product add to Cart']);
+             return redirect()->back()->with('success','cart update successfully');
+
+
+        }
+
+    }
 }

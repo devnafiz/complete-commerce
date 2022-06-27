@@ -230,6 +230,7 @@ Route::post('/post/store', [PostController::class, 'BlogPostStore'])->name('post
 
 
 
+
 //Front end 
 
 
@@ -253,6 +254,8 @@ Route::get('remove/cart/{rowId}',[CartController::class,'removeCart'])->name('re
 Route::post('/update/cart/item',[CartController::class,'updateCartItem'])->name('update.cart.item');
 
 Route::get('/cart/product/view/{id}',[CartController::class,'ViewProduct'])->name('view.product.cart');
+
+Route::post('/cart/product/insert',[CartController::class,'productInsertCart'])->name('insert.into.cart');
 
 
 

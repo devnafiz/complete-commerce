@@ -3750,7 +3750,9 @@
         	   </div>
         	   <div class="col-lg-4">
         	   	<div class="card">
-        	   		
+        	   		<form action="{{route('insert.into.cart')}}" method="POST">
+        	   			@csrf
+        	   			<input type="hidden" name="product_id" id="product_id">
         	   		<div class="card-body">
         	   			<div class="form-group">
         	   				<label>color</label>
@@ -3774,6 +3776,7 @@
         	   			<button type="submit" class="btn btn-success btn-sm">add to cart</button>
         	   			
         	   		</div>
+        	   	</form>
         	   		
         	   	</div>
         	   	
@@ -3854,6 +3857,7 @@
                      $('#psub').text(data.product.subcategory_name_en);
                      $('#pbrand').text(data.product.brand_name_en);
                      $('#pName').text(data.product.product_name_en);
+                     $('#product_id').val(data.product.id);
 
                      var d=$('select[name="color"]').empty();
 
