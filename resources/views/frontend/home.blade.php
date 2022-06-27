@@ -3725,6 +3725,7 @@
         	   		
         	   		<div class="card-body">
         	   			<h5 id="pName"></h5>
+        	   			<img src="" id="pimage" style="width:60px;height: 60px;" >
         	   		</div>
         	   		
         	   	</div>
@@ -3735,11 +3736,11 @@
         	   		
         	   		<div class="card-body">
         	   			<ul class="list-group">
-							  <li class="list-group-item">An item</li>
-							  <li class="list-group-item">A second item</li>
-							  <li class="list-group-item">A third item</li>
-							  <li class="list-group-item">A fourth item</li>
-							  <li class="list-group-item">And a fifth one</li>
+							  <li class="list-group-item">Product Code:<span id="pcode"></span></li>
+							  <li class="list-group-item">Category: <span id="pcat"></span></li>
+							  <li class="list-group-item">SubCategory:<span id="psub"></span></li>
+							  <li class="list-group-item">Brand: <span id="pbrand"></span></li>
+							  <li class="list-group-item">Stock<spann style="background: white;color: green;"></span></li>
 							</ul>
         	   			
         	   		</div>
@@ -3753,19 +3754,15 @@
         	   		<div class="card-body">
         	   			<div class="form-group">
         	   				<label>color</label>
-        	   				<select class="form-control">
-        	   					<option>option one</option>
-        	   					<option>option one</option>
-        	   					<option>option one</option>
+        	   				<select class="form-control" id="color" name="color">
+        	   				
         	   				</select>
         	   				
         	   			</div>
         	   			<div class="form-group">
         	   				<label>size</label>
-        	   				<select class="form-control">
-        	   					<option>option one</option>
-        	   					<option>option one</option>
-        	   					<option>option one</option>
+        	   				<select class="form-control" id="size" name="size">
+        	   					
         	   				</select>
         	   				
         	   			</div>
@@ -3851,6 +3848,26 @@
 
 
                      $('#pName').text(data.product.product_name_en);
+                     $('#pimage').attr('src',data.product.product_thambnail);
+                     $('#pcode').text(data.product.product_code);
+                     $('#pcat').text(data.product.category_name_en);
+                     $('#psub').text(data.product.subcategory_name_en);
+                     $('#pbrand').text(data.product.brand_name_en);
+                     $('#pName').text(data.product.product_name_en);
+
+                     var d=$('select[name="color"]').empty();
+
+                     $.each(data.color,function(key,value){
+
+                     $('select[name="color"]').append('<option value="'+value+'">'+value+'</option');
+
+                     });
+
+                     $.each(data.size,function(key,value){
+
+                     $('select[name="size"]').append('<option value="'+value+'">'+value+'</option');
+
+                     });
 
                }
            
