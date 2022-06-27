@@ -245,7 +245,7 @@
 												<input type="radio" name="product_color" style="background:#000000">
 												<input type="radio" name="product_color" style="background:#999999">
 											</div>
-											<button class="product_cart_button " data-id="{{$row->id}}" data-toggle="modal" data-target="#cartModal" onclick="productView(this.id)">Add to Cart</button>
+											<button class="product_cart_button" id="{{$row->id}}" data-toggle="modal" data-target="#cartModal" onclick="productView(this.id)">Add to Cart</button>
 										</div>
 									</div>
                                     <button class="addwishlist" data-id="{{$row->id}}">
@@ -3711,7 +3711,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Product quick View</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -3724,7 +3724,7 @@
         	   	<div class="card">
         	   		
         	   		<div class="card-body">
-        	   			<h5>product name</h5>
+        	   			<h5 id="pName"></h5>
         	   		</div>
         	   		
         	   	</div>
@@ -3785,8 +3785,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      <!--   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button> -->
       </div>
     </div>
   </div>
@@ -3832,6 +3832,36 @@
     break; 
  }
  @endif 
+</script>
+
+<script >
+	
+ function productView(id) {
+
+ 	    //alert(id);
+      $.ajax({
+
+
+               url:"{{url('/cart/product/view/')}}/"+id,
+
+               type:"GET",
+               dataType:"json",
+
+               success:function(data){
+
+
+                     $('#pName').text(data.product.product_name_en);
+
+               }
+           
+
+      })
+
+
+
+ }
+
+
 </script>
 
 
