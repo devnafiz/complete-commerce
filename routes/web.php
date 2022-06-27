@@ -257,6 +257,9 @@ Route::get('/cart/product/view/{id}',[CartController::class,'ViewProduct'])->nam
 
 Route::post('/cart/product/insert',[CartController::class,'productInsertCart'])->name('insert.into.cart');
 
+Route::get('/user/Checkout/',[CartController::class,'CheckOut'])->name('user.checkout');
+
+
 
 
 

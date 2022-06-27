@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use Cart;
 use Response;
-
+use Auth;
 class CartController extends Controller
 {
     public function AddCart(Request $request,$id){
@@ -155,5 +155,18 @@ class CartController extends Controller
 
         }
 
+    }
+
+    //checkout 
+
+    public function CheckOut(){
+
+        if(Auth::check()){
+
+
+        }else{
+
+            return redirect()->route('login')->with('success','Please Login ');
+        }
     }
 }
