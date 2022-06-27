@@ -163,7 +163,10 @@ class CartController extends Controller
 
         if(Auth::check()){
 
+    $cart =Cart::content();
+          //dd($cart);
 
+       return view('frontend.pages.checkout',compact('cart'));
         }else{
 
             return redirect()->route('login')->with('success','Please Login ');

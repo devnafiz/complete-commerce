@@ -37,7 +37,7 @@
 							<div><a href="#">Sign in</a></div>
 							@else
                               <div class="user_icon"><img src="{{asset('frontend/images/user.svg')}}" alt=""></div>
-								<div><a href="#">Profuile</a></div>
+								<div><a href="#">Profile</a></div>
 								<div>  
 
                                  	<ul class="standard_dropdown top_bar_dropdown">
@@ -47,7 +47,7 @@
 
 									    <ul>
 											<li><a href="#">Wishlist</a></li>
-											<li><a href="#">Checkout</a></li>
+											<li><a href="{{route('user.checkout')}}">Checkout</a></li>
 												<li> <form method="POST" action="{{ route('logout') }}" x-data>
 		                                @csrf
 
