@@ -46,7 +46,7 @@
 								 <li><a href="#">{{ Auth::user()->name }}<i class="fas fa-chevron-down"></i></a>
 
 									    <ul>
-											<li><a href="#">Wishlist</a></li>
+											<li><a href="{{route('user.wishlist')}}">Wishlist</a></li>
 											<li><a href="{{route('user.checkout')}}">Checkout</a></li>
 												<li> <form method="POST" action="{{ route('logout') }}" x-data>
 		                                @csrf
