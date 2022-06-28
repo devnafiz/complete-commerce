@@ -260,6 +260,9 @@ Route::post('/cart/product/insert',[CartController::class,'productInsertCart'])-
 Route::get('/user/Checkout/',[CartController::class,'CheckOut'])->name('user.checkout');
 
 Route::get('/user/wishlist/',[CartController::class,'wishlist'])->name('user.wishlist');
+Route::post('/checkout/apply/coupon',[CartController::class,'coupon'])->name('apply.coupon');
+
+
 
 
 

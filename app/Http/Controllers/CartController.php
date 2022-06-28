@@ -7,6 +7,7 @@ use DB;
 use Cart;
 use Response;
 use Auth;
+use Session;
 class CartController extends Controller
 {
     public function AddCart(Request $request,$id){
@@ -188,5 +189,36 @@ class CartController extends Controller
 
          return view('frontend.pages.wishlist',compact('products'));        
 
+    }
+
+
+    public function coupon(Request $request){
+
+
+        $coupon =$request->coupon;
+
+        $check=DB::table('coupons')->where('coupon',$coupon)->first();
+
+        if($check){
+
+          Session::put('coupon',[
+               'name'=>$check->coupon,
+               'discount'=>$check->discount,
+               'balance' =>Cart::subtotal()-$check->discount
+          ]);
+         $notification=array(
+
+                'message'=>'successfully coupon applied',
+                'alert-type'=>'success'
+             );
+            return redirect()->back()->with($notification);
+        }else{
+             $notification=array(
+
+                'message'=>'Invalid Coupon',
+                'alert-type'=>'error'
+             );
+            return redirect()->back()->with($notification);
+        }
     }
 }

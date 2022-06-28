@@ -13,6 +13,8 @@
 <link rel="stylesheet" type="text/css" href="{{asset('frontend/plugins/OwlCarousel2-2.2.1/animate.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('frontend/styles/blog_styles.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('frontend/styles/blog_responsive.css')}}">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
+
 
 @yield('extra-css')
 
@@ -60,6 +62,31 @@
 <script src="{{asset('frontend/plugins/parallax-js-master/parallax.min.js')}}"></script>
 <script src="{{asset('frontend/plugins/easing/easing.js')}}"></script>
 <script src="{{asset('frontend/js/blog_custom.js')}}"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<script>
+ @if(Session::has('message'))
+ var type = "{{ Session::get('alert-type','info') }}"
+ switch(type){
+    case 'info':
+    toastr.info(" {{ Session::get('message') }} ");
+    break;
+
+    case 'success':
+    toastr.success(" {{ Session::get('message') }} ");
+    break;
+
+    case 'warning':
+    toastr.warning(" {{ Session::get('message') }} ");
+    break;
+
+    case 'error':
+    toastr.error(" {{ Session::get('message') }} ");
+    break; 
+ }
+ @endif 
+</script>
+
 @yield('extra_ja')
 </body>
 

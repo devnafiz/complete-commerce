@@ -74,9 +74,10 @@
 						
 							<div class="order_total_content" style="padding:15px;">
                    <h5>Apply Coupon</h5>
-								<form>
+								<form method="POST" action="{{route('apply.coupon')}}">
+									@csrf
 									   <div class="form-group col-lg-4">
-									   	<input type="text" name="" class="form-control" required placeholder="Enter code">
+									   	<input type="text" name="coupon" class="form-control" required placeholder="Enter code">
 									   	
 									   </div>
                     <button type="submit" class="btn btn-success ml-2">submit</button>  
@@ -85,7 +86,7 @@
 								
 							</div>
 							<ul class="list-group col-lg-4" style="float: right;">
-								<li class="list-group-item">Sub Total:<span style="float:right;">524</span></li>
+								<li class="list-group-item">Sub Total:<span style="float:right;">{{Cart::subtotal()}}</span></li>
 								<li class="list-group-item">Coupon:<span style="float:right;">524</span></li>
 								<li class="list-group-item">Shipping Charge:<span style="float:right;">524</span></li>
 								<li class="list-group-item">Vat:<span style="float:right;">524</span></li>
