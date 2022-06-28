@@ -71,12 +71,31 @@
 						</div>
 						
 						<!-- Order Total -->
-						<div class="order_total">
-							<div class="order_total_content text-md-right">
-								<div class="order_total_title">Order Total:</div>
-								<div class="order_total_amount">${{Cart::total()}}</div>
+						
+							<div class="order_total_content ">
+
+								<form>
+									   <div class="form-group col-lg-4">
+									   	<input type="text" name="" class="form-control" required placeholder="Enter code">
+									   	
+									   </div>
+                    <button type="submit" class="btn btn-success ml-2">submit</button>  
+
+								</form>
+								
 							</div>
+							<ul class="list-group col-lg-4" style="float: right;">
+								<li class="list-group-item">Sub Total:<span style="float:right;">524</span></li>
+								<li class="list-group-item">Coupon:<span style="float:right;">524</span></li>
+								<li class="list-group-item">Shipping Charge:<span style="float:right;">524</span></li>
+								<li class="list-group-item">Vat:<span style="float:right;">524</span></li>
+								<li class="list-group-item">Total:<span style="float:right;">524</span></li>
+								
+							</ul>
 						</div>
+					</div>
+				</div>
+						
 
 						<div class="cart_buttons">
 							<button type="button" class="button cart_button_clear">All Cancel</button>
