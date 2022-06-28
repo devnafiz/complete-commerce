@@ -72,8 +72,8 @@
 						
 						<!-- Order Total -->
 						
-							<div class="order_total_content ">
-
+							<div class="order_total_content" style="padding:15px;">
+                   <h5>Apply Coupon</h5>
 								<form>
 									   <div class="form-group col-lg-4">
 									   	<input type="text" name="" class="form-control" required placeholder="Enter code">
