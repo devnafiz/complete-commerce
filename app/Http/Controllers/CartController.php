@@ -172,4 +172,21 @@ class CartController extends Controller
             return redirect()->route('login')->with('success','Please Login ');
         }
     }
+
+
+
+    public function wishlist(Request $request){
+
+        $user_id =Auth::id();
+
+        $products=DB::table('wishlists')
+                 ->join('products','wishlists.product_id','products.id')
+                 ->select('products.*','wishlists.user_id')
+                 ->where('wishlists.user_id',$user_id)
+                 ->get();
+
+
+         return view('frontend.pages.wishlist',compact('products'));        
+
+    }
 }
