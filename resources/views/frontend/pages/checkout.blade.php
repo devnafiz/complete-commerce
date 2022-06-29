@@ -101,11 +101,13 @@
 
 								@if(Session::has('coupon'))
 								<li class="list-group-item">Sub Total:<span style="float:right;">${{Session::get('coupon')['balance']}}</span></li>
-								<li class="list-group-item">Coupon:({{Session::get('coupon')['name']}})<span style="float:right;">{{Session::get('coupon')['discount']}}</span></li>
+								<li class="list-group-item">Coupon:({{Session::get('coupon')['name']}}) 
+                 <a href="{{route('coupon.remove')}}" class="btn btn-danger btn-sm">X</a>
+									<span style="float:right;">{{Session::get('coupon')['discount']}}</span></li>
 								@else
 
 								<li class="list-group-item">Sub Total:<span style="float:right;">${{Cart::subtotal()}}</span></li>
-								<!-- <li class="list-group-item">Coupon:({{Session::get('coupon')['name']}})<span style="float:right;">{{Session::get('coupon')['discount']}}</span></li> -->
+						
 
 								@endif
 								<li class="list-group-item">Shipping Charge:<span style="float:right;">{{ $shipping}}</span></li>
@@ -114,7 +116,7 @@
 								@if(Session::has('coupon'))
                     <li class="list-group-item">Total:<span style="float:right;">{{Session::get('coupon')['balance'] + $shipping + $vat}}</span></li>
 								@else
-                 <li class="list-group-item">Total:<span style="float:right;">{{Cart::total() + $shipping + $vat}}</span></li>
+                 <li class="list-group-item">Total:<span style="float:right;">{{Cart::subtotal() + $shipping + $vat}}</span></li>
 								@endif
 								
 								

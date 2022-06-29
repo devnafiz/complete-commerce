@@ -42,6 +42,8 @@ Route::get('/test', function () {
    app()->make('first_app_bind');
 });
 
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -261,6 +263,7 @@ Route::get('/user/Checkout/',[CartController::class,'CheckOut'])->name('user.che
 
 Route::get('/user/wishlist/',[CartController::class,'wishlist'])->name('user.wishlist');
 Route::post('/checkout/apply/coupon',[CartController::class,'coupon'])->name('apply.coupon');
+Route::get('/coupon/remove',[CartController::class,'couponRemove'])->name('coupon.remove');
 
 
 

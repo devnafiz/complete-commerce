@@ -221,4 +221,16 @@ class CartController extends Controller
             return redirect()->back()->with($notification);
         }
     }
+
+    public function couponRemove(){
+
+
+        Session::forget('coupon');
+        $notification=array(
+
+                'message'=>' Coupon Remove',
+                'alert-type'=>'success'
+             );
+            return redirect()->back()->with($notification);
+    }
 }
