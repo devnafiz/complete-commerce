@@ -14,9 +14,18 @@
 									<li>
 										<a href="#">English<i class="fas fa-chevron-down"></i></a>
 										<ul>
-											<li><a href="#">Italian</a></li>
-											<li><a href="#">Spanish</a></li>
-											<li><a href="#">Japanese</a></li>
+											<li>
+                                                 @if(Session::has('hindi')) 
+
+                                                   <a href="#">English</a>
+                                                 @else
+                                                   <a href="#">Hindi</a>
+                                                 @endif   
+
+												
+                                               
+											</li>
+											
 										</ul>
 									</li>
 									<li>

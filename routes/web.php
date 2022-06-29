@@ -17,6 +17,7 @@ use App\Http\Controllers\backend\PostController;
 use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductDetailsController;
+use App\Http\Controllers\BlogController;
 
 
 
@@ -264,6 +265,8 @@ Route::get('/user/Checkout/',[CartController::class,'CheckOut'])->name('user.che
 Route::get('/user/wishlist/',[CartController::class,'wishlist'])->name('user.wishlist');
 Route::post('/checkout/apply/coupon',[CartController::class,'coupon'])->name('apply.coupon');
 Route::get('/coupon/remove',[CartController::class,'couponRemove'])->name('coupon.remove');
+
+Route::get('blog/post',[BlogController::class,'blog'])->name('blog.post');
 
 
 

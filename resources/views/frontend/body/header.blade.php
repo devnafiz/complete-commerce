@@ -14,9 +14,13 @@
 									<li>
 										<a href="#">English<i class="fas fa-chevron-down"></i></a>
 										<ul>
-											<li><a href="#">Italian</a></li>
-											<li><a href="#">Spanish</a></li>
-											<li><a href="#">Japanese</a></li>
+											<li>@if(Session::has('hindi')) 
+
+                                                   <a href="#">English</a>
+                                                 @else
+                                                   <a href="#">Hindi</a>
+                                                 @endif   </li>
+										
 										</ul>
 									</li>
 									<li>
@@ -215,7 +219,7 @@
 											<li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
 										</ul>
 									</li>
-									<li><a href="blog.html">Blog<i class="fas fa-chevron-down"></i></a></li>
+									<li><a href="{{route('blog.post')}}">Blog<i class="fas fa-chevron-down"></i></a></li>
 									<li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
 								</ul>
 							</div>
