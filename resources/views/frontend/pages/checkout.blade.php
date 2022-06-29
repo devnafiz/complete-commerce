@@ -10,7 +10,12 @@
 @endsection
 @section('content')
 
+@php
+   $charge =DB::table('settings')->first();
+   $shipping =$charge->shopping_charge;
+   $vat =$charge->vat;
 
+@endphp
 
 	<div class="cart_section">
 		<div class="container">
@@ -93,11 +98,25 @@
 								@endif
 							</div>
 							<ul class="list-group col-lg-4" style="float: right;">
+
+								@if(Session::has('coupon'))
 								<li class="list-group-item">Sub Total:<span style="float:right;">${{Session::get('coupon')['balance']}}</span></li>
 								<li class="list-group-item">Coupon:({{Session::get('coupon')['name']}})<span style="float:right;">{{Session::get('coupon')['discount']}}</span></li>
-								<li class="list-group-item">Shipping Charge:<span style="float:right;">524</span></li>
-								<li class="list-group-item">Vat:<span style="float:right;">524</span></li>
-								<li class="list-group-item">Total:<span style="float:right;">524</span></li>
+								@else
+
+								<li class="list-group-item">Sub Total:<span style="float:right;">${{Cart::subtotal()}}</span></li>
+								<!-- <li class="list-group-item">Coupon:({{Session::get('coupon')['name']}})<span style="float:right;">{{Session::get('coupon')['discount']}}</span></li> -->
+
+								@endif
+								<li class="list-group-item">Shipping Charge:<span style="float:right;">{{ $shipping}}</span></li>
+								<li class="list-group-item">Vat:<span style="float:right;">{{ $vat}}</span></li>
+
+								@if(Session::has('coupon'))
+                    <li class="list-group-item">Total:<span style="float:right;">{{Session::get('coupon')['balance'] + $shipping + $vat}}</span></li>
+								@else
+                 <li class="list-group-item">Total:<span style="float:right;">{{Cart::total() + $shipping + $vat}}</span></li>
+								@endif
+								
 								
 							</ul>
 						</div>
