@@ -73,6 +73,13 @@
 						<!-- Order Total -->
 						
 							<div class="order_total_content" style="padding:15px;">
+
+								@if(Session::has('coupon'))
+
+
+								@else
+
+								
                    <h5>Apply Coupon</h5>
 								<form method="POST" action="{{route('apply.coupon')}}">
 									@csrf
@@ -83,11 +90,11 @@
                     <button type="submit" class="btn btn-success ml-2">submit</button>  
 
 								</form>
-								
+								@endif
 							</div>
 							<ul class="list-group col-lg-4" style="float: right;">
-								<li class="list-group-item">Sub Total:<span style="float:right;">{{Cart::subtotal()}}</span></li>
-								<li class="list-group-item">Coupon:<span style="float:right;">524</span></li>
+								<li class="list-group-item">Sub Total:<span style="float:right;">${{Session::get('coupon')['balance']}}</span></li>
+								<li class="list-group-item">Coupon:({{Session::get('coupon')['name']}})<span style="float:right;">{{Session::get('coupon')['discount']}}</span></li>
 								<li class="list-group-item">Shipping Charge:<span style="float:right;">524</span></li>
 								<li class="list-group-item">Vat:<span style="float:right;">524</span></li>
 								<li class="list-group-item">Total:<span style="float:right;">524</span></li>
