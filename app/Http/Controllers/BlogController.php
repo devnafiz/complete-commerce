@@ -14,6 +14,7 @@ class BlogController extends Controller
                 ->select('posts.*','post_category.category_name_en','post_category.category_name_hin')
                 ->get();
 
-       return response()->json($posts);         
+       //return response()->json($posts);
+       return view('frontend.pages.blog',compact($posts));         
     }
 }

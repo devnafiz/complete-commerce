@@ -207,7 +207,7 @@ Route::get('/list/post', [PostController::class, 'ListBlogPost'])->name('list.po
 
 Route::get('/add/post', [PostController::class, 'AddBlogPost'])->name('add.post');
 
-Route::post('/post/store', [PostController::class, 'BlogPostStore'])->name('post-store');
+Route::post('/post/store', [PostController::class, 'BlogPostStore'])->name('post.store');
 
 });
 

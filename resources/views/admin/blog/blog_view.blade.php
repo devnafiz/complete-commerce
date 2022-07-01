@@ -43,6 +43,7 @@
 											
 											<th>blog cat name eng</th>
 											<th>Blog cat name hindi</th>
+											<th>details</th>
 											
 											<th>Status</th>
 											<th>Action</th>
@@ -52,15 +53,16 @@
 
 
 
-										@foreach($Blog_categories as $k=>$val)
+										@foreach($Blogs as $k=>$val)
 
 										<tr>
 											<td>110</td>
 											<td><img src="images/cruise3.jpg" alt="table-img"
 													class="img-fluid rounded-circle" width="40px"></td>
 											
-											<td><a href="#">{{$val->category_name_en}}</a></td>
-											<td><a href="#">{{$val->category_name_hin}}</a></td>
+											<td><a href="#">{{$val['category']['category_name_en']}}</a></td>
+											<td><a href="#">{{$val['category']['category_name_hin']}}</a></td>
+											<td>{{$val->post_title_en}}</td>
 											
 											<td class="active"><a href="#">Active</a></td>
 											<td>

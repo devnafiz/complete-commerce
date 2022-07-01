@@ -50,7 +50,7 @@
 							</div><!-- End column -->
 						</div><!-- end row -->
 						<div class="cruise-listing-form">
-							<form class="text-center" action="{{route('blogcategory.store')}}" method="POST" enctype="multipart/form-data">
+							<form class="text-center" action="{{route('post.store')}}" method="POST" enctype="multipart/form-data">
 								@csrf
 
 								<div class="form-row">
