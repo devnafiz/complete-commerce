@@ -19,6 +19,8 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductDetailsController;
 use App\Http\Controllers\BlogController;
 
+use App\Http\Controllers\LanguageController;
+
 
 
 
@@ -267,6 +269,12 @@ Route::post('/checkout/apply/coupon',[CartController::class,'coupon'])->name('ap
 Route::get('/coupon/remove',[CartController::class,'couponRemove'])->name('coupon.remove');
 
 Route::get('blog/post',[BlogController::class,'blog'])->name('blog.post');
+
+//language
+
+Route::get('/language/english',[LanguageController::class,'english'])->name('language.english');
+Route::get('/language/hindi',[LanguageController::class,'hindi'])->name('language.hindi');
+
 
 
 

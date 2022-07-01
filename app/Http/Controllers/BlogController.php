@@ -15,6 +15,6 @@ class BlogController extends Controller
                 ->get();
 
        //return response()->json($posts);
-       return view('frontend.pages.blog',compact($posts));         
+       return view('frontend.pages.blog',compact('posts'));         
     }
 }

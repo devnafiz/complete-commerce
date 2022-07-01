@@ -14,12 +14,15 @@
 									<li>
 										<a href="#">English<i class="fas fa-chevron-down"></i></a>
 										<ul>
-											<li>
-                                                 @if(Session::has('hindi')) 
+											<li> @php 
+                         $language=Session()->get('lang');
 
-                                                   <a href="#">English</a>
+                       @endphp
+												@if(Session()->get('lang')=='hindi') 
+
+                                                   <a href="{{route('language.english')}}">English</a>
                                                  @else
-                                                   <a href="#">Hindi</a>
+                                                   <a href="{{route('language.hindi')}}">Hindi</a>
                                                  @endif   
 
 												
