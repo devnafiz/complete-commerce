@@ -21,6 +21,8 @@ use App\Http\Controllers\BlogController;
 
 use App\Http\Controllers\LanguageController;
 
+use App\Http\Controllers\PaymentController;
+
 
 
 
@@ -278,6 +280,8 @@ Route::get('/language/hindi',[LanguageController::class,'hindi'])->name('languag
 //payment
 
 Route::get('payment/page',[CartController::class,'paymentPage'])->name('payment.step');
+Route::post('user/payment/process',[PaymentController::class,'payment'])->name('payment.process');
+
 
 
 
