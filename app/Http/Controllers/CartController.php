@@ -233,4 +233,11 @@ class CartController extends Controller
              );
             return redirect()->back()->with($notification);
     }
+
+
+    public function paymentPage(){
+
+        $cart =Cart::content();
+        return view('frontend.pages.payment',compact('cart'));
+    }
 }

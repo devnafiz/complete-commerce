@@ -22,7 +22,7 @@
 			<div class="row">
 				<div class="col-lg-10 offset-lg-1">
 					<div class="cart_container">
-						<div class="cart_title">Shopping Cart</div>
+						<div class="cart_title">Payment </div>
 						<div class="cart_items">
 							<ul class="cart_list">
                             @foreach($cart as $k=>$val)
@@ -123,6 +123,34 @@
 							</ul>
 						</div>
 					</div>
+				</div>
+
+				<div class="row">
+					   <div class="col-lg-7 col-md-7" style="border:1px solid gray; padding: 20px;">
+					   	
+					   </div>
+					   <div class="col-lg-5 " style="border:1px solid gray; padding: 20px;">
+
+					   	  <div class="contact_form_container">
+                        <div class="contact_form_title">Shipping address</div>
+
+
+        <form action="{{route('register')}}" id="contact_form" method="POST">
+                         @csrf   
+                            <div class="form-group">
+                                 <input type="text"  class="form-control " placeholder="Your Full name" required="required" data-error="Name is required." name="name">
+                            </div> 
+                            
+                            <div class="contact_form_button">
+                                <button type="submit" class="button contact_submit_button">Sign Up</button>
+                            </div>
+                        </form>
+
+
+                    </div>
+					   	
+					   </div>
+					
 				</div>
 						
 

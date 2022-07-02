@@ -65,9 +65,9 @@ Route::group(['prefix'=> 'admin', 'middleware'=>['admin:admin']], function(){
 
 Route::middleware(['auth:admin'])->group(function(){
 
+//sanctum
 
-
-Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', function () {
+Route::middleware(['auth:admin', 'verified'])->get('/admin/dashboard', function () {
     return view('admin.index');
 })->name('dashboard')->middleware('auth:admin');
 
@@ -275,6 +275,9 @@ Route::get('blog/post',[BlogController::class,'blog'])->name('blog.post');
 Route::get('/language/english',[LanguageController::class,'english'])->name('language.english');
 Route::get('/language/hindi',[LanguageController::class,'hindi'])->name('language.hindi');
 
+//payment
+
+Route::get('payment/page',[CartController::class,'paymentPage'])->name('payment.step');
 
 
 
