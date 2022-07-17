@@ -45,7 +45,6 @@
 						</a>
 						<div class="collapse sub-menu" id="users">
 							<a class="items-list1" href="{{url('category/sub/add')}}">Create sub category</a>
-							<a class="items-list1" href="{{route('all.subcategory')}}">List</a>
 						</div><!-- End sub-menu -->
 					</li>
 					<li class="nav-item">
@@ -56,8 +55,8 @@
 							<span><i class="fa fa-chevron-down arrow"></i></span>
 						</a>
 						<div class="collapse sub-menu" id="users">
-							<a class="items-list1" href="{{url('brand/add')}}">Create brand</a>
-							<a class="items-list1" href="{{route('all.brand')}}">List</a>
+							<a class="items-list1" href="{{url('brand/add')}}">Create User</a>
+							<a class="items-list1" href="users-list.html">List</a>
 						</div><!-- End sub-menu -->
 					</li>
 					
