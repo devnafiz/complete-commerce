@@ -14,5 +14,23 @@ class PaymentController extends Controller
            $data['phone']=$request->phone;
            $data['address']=$request->address;
            $data['city']=$request->city;
+           $data['payment']=$request->payment;
+           //dd($data);
+
+           if($request->payment=='stripe'){
+
+         return view('frontend.pages.payment.stripe',compact('data'));
+
+           }elseif($request->payment=='paypal'){
+
+
+
+           }elseif($request->payment=='ideal'){
+
+
+           }else{
+
+           	echo "Cash on delvery";
+           }
     }
 }
