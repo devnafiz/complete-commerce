@@ -282,6 +282,8 @@ Route::get('/language/hindi',[LanguageController::class,'hindi'])->name('languag
 Route::get('payment/page',[CartController::class,'paymentPage'])->name('payment.step');
 Route::post('user/payment/process',[PaymentController::class,'payment'])->name('payment.process');
 
+Route::post('user/stripe/charge',[PaymentController::class,'StripeCharge'])->name('stripe.charge');
+
 
 
 

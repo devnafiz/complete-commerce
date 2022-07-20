@@ -102,10 +102,11 @@
 					   <div class="col-lg-5 " style="border:1px solid gray; padding: 20px;">
 
 					   	  <div class="contact_form_container">
-                        <div class="contact_form_title">Shipping address</div>
+                        <div class="contact_form_title text-center">Shipping address</div>
 
 
-                          <form action="/charge" method="post" id="payment-form">
+                          <form action="{{route('stripe.charge')}}" method="post" id="payment-form">
+                          	@csrf
 							  <div class="form-row">
 							    <label for="card-element">
 							      Credit or debit card
@@ -116,9 +117,9 @@
 
 							    <!-- Used to display Element errors. -->
 							    <div id="card-errors" role="alert"></div>
-							  </div>
+							  </div><br>
 
-							  <button>Submit Payment</button>
+							  <button class="btn btn-info">pay now</button>
 							</form>
 
         
@@ -164,11 +165,11 @@ triggerTabList.forEach(triggerEl => {
 
 </script>
 
-<script type="text/javascript">
+
 	
-	script type="text/javascript">
+	<script type="text/javascript">
     // Create a Stripe client.
-var stripe = Stripe('pk_test_51IUTWzALc6pn5BvMAUegqRHV0AAokjG7ZuV6RWcj5rxB9KCAwamgtWpw9T4maGAe34WmDkD6LSn1Yge3nzex6gYk004pILHsNh');
+var stripe = Stripe('pk_test_YiOT0gxpcUb2SVnMrzC0rIOt');
 // Create an instance of Elements.
 var elements = stripe.elements();
 // Custom styling can be passed to options when creating an Element.
@@ -230,7 +231,35 @@ function stripeTokenHandler(token) {
 }
 </script>
 
-</script>
+	
+
+
+	<style>
+    /**
+ * The CSS shown here will not be introduced in the Quickstart guide, but shows
+ * how you can use CSS to style your Element's container.
+ */
+.StripeElement {
+  box-sizing: border-box;
+  height: 40px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;}
+</style>
 
 @endsection
 

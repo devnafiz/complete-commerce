@@ -33,4 +33,25 @@ class PaymentController extends Controller
            	echo "Cash on delvery";
            }
     }
+
+
+    public function StripeCharge(Request $request){
+
+			    	// Set your secret key. Remember to switch to your live secret key in production.
+			// See your keys here: https://dashboard.stripe.com/apikeys
+			\Stripe\Stripe::setApiKey('sk_test_qf4foQChU3HMu5y1KHNC5z0k');
+
+			// Token is created using Stripe Checkout or Elements!
+			// Get the payment token ID submitted by the form:
+			$token = $_POST['stripeToken'];
+			$charge = \Stripe\Charge::create([
+			  'amount' => 999*100,
+			  'currency' => 'usd',
+			  'description' => 'Ecommerce details',
+			  'source' => $token,
+			  'metadata'=>['order_id'=>uniqid()]
+			]);
+
+			dd($charge);
+    }
 }
