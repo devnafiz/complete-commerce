@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use DB;
 
 class PaymentController extends Controller
 {
@@ -51,7 +53,22 @@ class PaymentController extends Controller
 			  'source' => $token,
 			  'metadata'=>['order_id'=>uniqid()]
 			]);
-
 			dd($charge);
+
+			$data =array();
+
+			$data['user_id'] =Auth::id();
+
+			$data['payment_id']=$charge->payment_method;
+			$data['paying_amount']=$charge->amount;
+			$data['blnc_transection']=$charge->amount;
+			$data['stripe_order_id']=$charge->amount;
+			$data['shipping']=$charge->amount;
+			$data['vat']=$charge->amount;
+
+			$data['total']=$charge->amount;
+
+
+			
     }
 }
