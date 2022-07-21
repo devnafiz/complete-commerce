@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use DB;
+use Cart;
+use Session;
 
 class PaymentController extends Controller
 {
@@ -38,6 +40,7 @@ class PaymentController extends Controller
 
 
     public function StripeCharge(Request $request){
+    	 $total=$request->total;
 
 			    	// Set your secret key. Remember to switch to your live secret key in production.
 			// See your keys here: https://dashboard.stripe.com/apikeys
@@ -47,7 +50,7 @@ class PaymentController extends Controller
 			// Get the payment token ID submitted by the form:
 			$token = $_POST['stripeToken'];
 			$charge = \Stripe\Charge::create([
-			  'amount' => 999*100,
+			  'amount' => $total*100,
 			  'currency' => 'usd',
 			  'description' => 'Ecommerce details',
 			  'source' => $token,
@@ -61,12 +64,26 @@ class PaymentController extends Controller
 
 			$data['payment_id']=$charge->payment_method;
 			$data['paying_amount']=$charge->amount;
-			$data['blnc_transection']=$charge->amount;
-			$data['stripe_order_id']=$charge->amount;
-			$data['shipping']=$charge->amount;
-			$data['vat']=$charge->amount;
+			$data['blnc_transection']=$charge->balance_transaction;
+			$data['stripe_order_id']=$charge->metadata->order_id;
+			$data['shipping']=$request->shipping;
+			$data['vat']=$request->vat;
 
-			$data['total']=$charge->amount;
+			$data['total']=$request->total;
+
+			if (Session::has('coupon')) {
+				$data['subtotal']=Session::get('coupon')['balance'];
+			}else{
+
+				 $data['subtotal']=Cart::subtotal();
+			}
+
+			$data['status']=0;
+			$data['date']=date('d-m-y');
+			$data['month']=date('F');
+			$data['year']=date('Y');
+			$order_id=DB::table('orders')->insertGetId($data);
+
 
 
 			

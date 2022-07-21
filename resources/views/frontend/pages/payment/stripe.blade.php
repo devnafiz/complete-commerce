@@ -118,6 +118,9 @@
 							    <!-- Used to display Element errors. -->
 							    <div id="card-errors" role="alert"></div>
 							  </div><br>
+							  <input type="hidden" name="shipping" value="{{ $shipping}}">
+							   <input type="hidden" name="vat" value="{{$vat}}">
+							    <input type="hidden" name="total" value="{{Cart::Subtotal() + $shipping + $vat}}">
 
 							  <button class="btn btn-info">pay now</button>
 							</form>
