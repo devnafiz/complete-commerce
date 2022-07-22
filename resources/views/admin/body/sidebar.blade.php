@@ -192,11 +192,21 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a href="bookmarks.html" class="items-list">
+						<a href="#Orders" class="items-list" data-toggle="collapse" aria-expanded="false">
 							<span><i class="far fa-bookmark" data-toggle="tooltip" data-html="true"
 									title="Messages"></i></span>
-							<span class="items-list-text">Bookmarks</span>
+							<span class="items-list-text">Orders</span>
+							<span><i class="fa fa-chevron-down arrow"></i></span>
 						</a>
+
+						  <div class="collapse sub-menu" id="Orders">
+								<a class="items-list1" href="listing-flight-create.html">Create</a>
+								<a class="items-list1" href="listing-flight-all.html">All</a>
+								<a class="items-list1" href="listing-flight-active.html">Active</a>
+								<a class="items-list1" href="listing-flight-drafts.html">Drafts</a>
+								<a class="items-list1" href="listing-flight-expired.html">Expired</a>
+								<a class="items-list1" href="listing-flight-featured.html">Featured</a>
+							</div>
 					</li>
 					<li class="nav-item">
 						<a href="#messages" class="items-list" data-toggle="collapse" aria-expanded="false">

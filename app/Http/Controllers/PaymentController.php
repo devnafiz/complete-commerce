@@ -68,6 +68,7 @@ class PaymentController extends Controller
 			$data['stripe_order_id']=$charge->metadata->order_id;
 			$data['shipping']=$request->shipping;
 			$data['vat']=$request->vat;
+			$data['payment_type']=$request->payment_type;
 
 			$data['total']=$request->total;
 
