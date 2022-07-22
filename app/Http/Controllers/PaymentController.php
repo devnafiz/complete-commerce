@@ -85,6 +85,28 @@ class PaymentController extends Controller
 			$order_id=DB::table('orders')->insertGetId($data);
 
 
+			//shiping id
+
+			$shipping =array();
+
+			$shipping['order_id']=$order_id;
+			$shipping['ship_name'] =$request->ship_name;
+			$shipping['ship_phone'] =$request->ship_phone;
+			$shipping['ship_email'] =$request->ship_email;
+			$shipping['ship_address'] =$request->ship_address;
+			$shipping['ship_city'] =$request->ship_city;
+
+			DB::table('shipping')->insert($shipping);
+
+
+			//ordes detail table
+
+
+			
+
+
+
+
 
 			
     }
