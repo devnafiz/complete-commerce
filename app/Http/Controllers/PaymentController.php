@@ -56,7 +56,7 @@ class PaymentController extends Controller
 			  'source' => $token,
 			  'metadata'=>['order_id'=>uniqid()]
 			]);
-			dd($charge);
+			//dd($charge);
 
 			$data =array();
 
@@ -102,7 +102,38 @@ class PaymentController extends Controller
 			//ordes detail table
 
 
-			
+			$content =Cart::content();
+			$details =array();
+
+			foreach ($content as $row) {
+				$details['order_id'] =$order_id;
+				$details['product_id'] =$row->id;
+				$details['product_name'] =$row->name;
+
+				$details['color'] =$row->options->color;
+				$details['size'] =$row->options->size;
+				$details['quantity'] =$row->qty;
+				$details['singleprice'] =$row->price;
+				$details['totalprice'] =$row->price*$row->qty;
+
+				DB::table('orders_details')->insert($details);
+				
+
+
+			}
+
+			Cart::destroy();
+
+			if (Session::has('coupon')) {
+			    Session::forget('coupon');  // destroy coupon
+			}
+
+			  $notification=array(
+
+                'message'=>' order process successfully',
+                'alert-type'=>'success'
+             );
+            return redirect()->to('/')->with($notification);
 
 
 
