@@ -11,6 +11,8 @@ use App\Http\Controllers\backend\SubCategoryController;
 
 use App\Http\Controllers\backend\CouponController;
 
+use App\Http\Controllers\backend\OrderController;
+
 use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\PostController;
 
@@ -22,6 +24,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\LanguageController;
 
 use App\Http\Controllers\PaymentController;
+
 
 
 
@@ -215,8 +218,10 @@ Route::post('/post/store', [PostController::class, 'BlogPostStore'])->name('post
 
 });
 
+// admin order  route
 
 
+Route::get('/admin/pending/orders', [OrderController::class, 'newOrder'])->name('admin.neworder');
 
 
 

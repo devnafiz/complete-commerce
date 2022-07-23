@@ -200,12 +200,9 @@
 						</a>
 
 						  <div class="collapse sub-menu" id="Orders">
-								<a class="items-list1" href="listing-flight-create.html">Create</a>
-								<a class="items-list1" href="listing-flight-all.html">All</a>
-								<a class="items-list1" href="listing-flight-active.html">Active</a>
-								<a class="items-list1" href="listing-flight-drafts.html">Drafts</a>
-								<a class="items-list1" href="listing-flight-expired.html">Expired</a>
-								<a class="items-list1" href="listing-flight-featured.html">Featured</a>
+								<a class="items-list1" href="{{route('admin.neworder')}}">New Orders</a>
+								<a class="items-list1" href="listing-flight-all.html">other</a>
+								
 							</div>
 					</li>
 					<li class="nav-item">
