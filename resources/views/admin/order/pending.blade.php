@@ -63,14 +63,14 @@
 											<td><a href="#">{{$val->blnc_transection}}</a></td>
 											<td><a href="#">{{$val->subtotal}}$</a></td>
 											<td><a href="#">{{$val->shipping}}$</a></td>
-											<td><a href="#">{{$val->date}}$</a></td>
+											<td><a href="#">{{$val->date}}</a></td>
 											<td><a href="#">{{$val->total}}$</a></td>
 
 											<td><a href="#">{{($val->status==0)? 'Pending' : 'Active'}}</a></td>
 											
 											
 											<td>
-												<a href="#"><i class="fas fa-edit"></i></a>
+												<a href="{{URL::to('admin/view/order/'.$val->id)}}"><i class="fas fa-eye"></i></a>
 												<a href="#"><i class="fas fa-trash-alt"></i></a>
 											</td>
 										</tr>

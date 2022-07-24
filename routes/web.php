@@ -222,6 +222,8 @@ Route::post('/post/store', [PostController::class, 'BlogPostStore'])->name('post
 
 
 Route::get('/admin/pending/orders', [OrderController::class, 'newOrder'])->name('admin.neworder');
+Route::get('/admin/view/order/{id}', [OrderController::class, 'singleView']);
+
 
 
 
