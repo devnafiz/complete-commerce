@@ -48,4 +48,28 @@ class OrderController extends Controller
 
 
     }
+
+
+    public function paymentAccept(Request $request,$id){
+
+    DB::table('orders')->where('id',$id)->update(['status'=>1]);
+     $notification = array(
+            'message' => 'payment Accepted  Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+    }
+
+
+    public function paymentCancel($id){
+          DB::table('orders')->where('id',$id)->update(['status'=>4]);
+     $notification = array(
+            'message' => 'Order cancel',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+
+    }
 }

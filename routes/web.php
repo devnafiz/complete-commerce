@@ -225,6 +225,9 @@ Route::get('/admin/pending/orders', [OrderController::class, 'newOrder'])->name(
 Route::get('/admin/view/order/{id}', [OrderController::class, 'singleView']);
 
 
+Route::get('/admin/payment/accept/{id}', [OrderController::class, 'paymentAccept'])->name('payment.accept');
+Route::get('/admin/payment/cancel/{id}', [OrderController::class, 'paymentCancel'])->name('payment.cancel');
+
 
 
 

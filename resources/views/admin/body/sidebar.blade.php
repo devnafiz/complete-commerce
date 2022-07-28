@@ -201,7 +201,9 @@
 
 						  <div class="collapse sub-menu" id="Orders">
 								<a class="items-list1" href="{{route('admin.neworder')}}">New Orders</a>
-								<a class="items-list1" href="listing-flight-all.html">other</a>
+								<a class="items-list1" href="{{route('')}}">Accept Payment</a>
+								<a class="items-list1" href="{{route('')}}">Cancel Payment</a>
+								<a class="items-list1" href="{{route('')}}">Process delivery</a>
 								
 							</div>
 					</li>
