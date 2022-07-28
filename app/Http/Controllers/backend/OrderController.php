@@ -72,4 +72,32 @@ class OrderController extends Controller
         return redirect()->back()->with($notification);
 
     }
+
+
+    public function AcceptPayment(Request $request){
+
+          $orders= DB::table('orders')->where('status',1)->get();
+          return view('admin.order.pending',compact('orders'));
+
+    }
+
+
+    public function CancelPayment(){
+        $orders= DB::table('orders')->where('status',4)->get();
+          return view('admin.order.pending',compact('orders'));
+
+
+    }
+
+    public function ProcessPayment(){
+
+         $orders= DB::table('orders')->where('status',2)->get();
+          return view('admin.order.pending',compact('orders'));
+    }
+
+    public function successPayment(){
+
+         $orders= DB::table('orders')->where('status',3)->get();
+          return view('admin.order.pending',compact('orders'));
+    }
 }

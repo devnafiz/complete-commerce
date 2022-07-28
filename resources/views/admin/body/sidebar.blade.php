@@ -201,9 +201,10 @@
 
 						  <div class="collapse sub-menu" id="Orders">
 								<a class="items-list1" href="{{route('admin.neworder')}}">New Orders</a>
-								<a class="items-list1" href="{{route('')}}">Accept Payment</a>
-								<a class="items-list1" href="{{route('')}}">Cancel Payment</a>
-								<a class="items-list1" href="{{route('')}}">Process delivery</a>
+								<a class="items-list1" href="{{route('admin.accept.payment')}}">Accept Payment</a>
+								<a class="items-list1" href="{{route('admin.cancel.order')}}">Cancel Payment</a>
+								<a class="items-list1" href="{{route('admin.process.payment')}}">Process delivery</a>
+								<a class="items-list1" href="{{route('admin.success.payment')}}"> delivery success</a>
 								
 							</div>
 					</li>

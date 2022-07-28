@@ -66,7 +66,20 @@
 											<td><a href="#">{{$val->date}}</a></td>
 											<td><a href="#">{{$val->total}}$</a></td>
 
-											<td><a href="#">{{($val->status==0)? 'Pending' : 'Active'}}</a></td>
+											<td>	
+													@if($val->status == 0)
+		         	<span class="badge badge-warning">Pending</span>
+			         	@elseif($val->status == 1)
+			         	<span class="badge badge-info">Payment Accept</span>
+			            @elseif($val->status == 2)
+			            <span class="badge badge-warning">Progress</span>
+			            @elseif($val->status == 3)
+			            <span class="badge badge-success">Delevered</span>
+			            @else
+			            <span class="badge badge-danger">Cancle</span>
+
+		         	@endif  
+	         </td>
 											
 											
 											<td>
