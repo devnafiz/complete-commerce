@@ -100,4 +100,12 @@ class OrderController extends Controller
          $orders= DB::table('orders')->where('status',3)->get();
           return view('admin.order.pending',compact('orders'));
     }
+
+
+
+    public function seo(){
+
+        $seo =DB::table('seo')->first();
+        return view('admin.coupon.seo',compact('seo'));
+    }
 }

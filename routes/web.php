@@ -236,6 +236,11 @@ Route::get('/admin/success/payment', [OrderController::class, 'successPayment'])
 
 
 
+Route::get('/admin/seo', [OrderController::class, 'seo'])->name('admin.seo');
+
+
+
+
 
 
 

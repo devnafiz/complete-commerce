@@ -188,7 +188,7 @@
 						<a href="reviews.html" class="items-list">
 							<span><i class="fas fa-sync-alt" data-toggle="tooltip" data-html="true"
 									title="Reviews"></i></span>
-							<span class="items-list-text">Reviews</span>
+							<span class="items-list-text">SEo</span>
 						</a>
 					</li>
 					<li class="nav-item">
@@ -276,7 +276,7 @@
 								<a class="items-list3" href="form-registration.html">Sign Up</a>
 								<a class="items-list3" href="form-forgot-password.html">Forgot Password</a>
 							</div>-->
-							<a class="items-list1" href="privacy-policy.html">Category</a>
+							<a class="items-list1" href="{{route('admin.seo')}}">Seo Setting</a>
 							<a class="items-list1" href="{{route('all.brand')}}">Brand View</a>
 							<a class="items-list1" href="{{route('all.category')}}">Category View</a>
 							<a class="items-list1" href="{{route('all.subcategory')}}">SubCategory View</a>
