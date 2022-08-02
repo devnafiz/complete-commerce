@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
         Intervention\Image\ImageServiceProvider::class,
+       // \Laravel\Telescope\TelescopeServiceProvider::class,
 
         /*
          * Application Service Providers...
