@@ -50,7 +50,7 @@
 									<div class="col-md">
 										<div class="form-group">
 											<label for="inputGroupSelect00" class="">meta Title</label>
-											<input type="text" class="form-control" required id="inputGroupSelect00" name="meta_title">
+											<input type="text" class="form-control" required id="inputGroupSelect00" name="meta_title" value="{{($seo->meta_title)? $seo->meta_title : ''}}">
 										</div><!-- end form-group -->
 									</div><!-- end column -->
 									
@@ -60,7 +60,7 @@
 									<div class="col-md">
 										<div class="form-group">
 											<label for="inputGroupSelect00" class="">Meta Author</label>
-											<input type="text" class="form-control" required id="inputGroupSelect00" name="meta_author" >
+											<input type="text" class="form-control" required id="inputGroupSelect00" name="mata_author" value="{{$seo->mata_author}}" >
 										</div><!-- end form-group -->
 									</div><!-- end column -->
 									
@@ -71,7 +71,7 @@
 										<div class="form-group">
 											
 											<textarea cols="30" rows="4" name="meta_description">
-												
+												{{$seo->meta_description}}
 											</textarea>
 										</div><!-- end form-group -->
 									</div><!-- end column -->
@@ -84,7 +84,7 @@
 									<div class="col-md">
 										<div class="form-group">
 											<label for="inputGroupSelect00" class="">meta tag</label>
-											<input type="text" class="form-control" required id="inputGroupSelect00" name="meta_tag">
+											<input type="text" class="form-control" required id="inputGroupSelect00" name="meta_tag" value="{{($seo->meta_tag)? $seo->meta_tag : ''}}">
 										</div><!-- end form-group -->
 									</div><!-- end column -->
 									
@@ -94,7 +94,7 @@
 									<div class="col-md">
 										<div class="form-group">
 											<label for="inputGroupSelect00" class="">Google Analytics</label>
-											<input type="text" class="form-control" required id="inputGroupSelect00" name="google_analytics">
+											<input type="text" class="form-control" required id="inputGroupSelect00" name="google_analytics" value="{{$seo->google_analytics}}">
 										</div><!-- end form-group -->
 									</div><!-- end column -->
 									
@@ -103,7 +103,7 @@
 									<div class="col-md">
 										<div class="form-group">
 											<label for="inputGroupSelect00" class="">bing Analytics</label>
-											<input type="text" class="form-control" required id="inputGroupSelect00" name="bing_analytics">
+											<input type="text" class="form-control" required id="inputGroupSelect00" name="bing_analytics" value="{{$seo->bing_analytics}}">
 										</div><!-- end form-group -->
 									</div><!-- end column -->
 									
