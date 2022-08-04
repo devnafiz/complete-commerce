@@ -237,6 +237,8 @@ Route::get('/admin/success/payment', [OrderController::class, 'successPayment'])
 
 
 Route::get('/admin/seo', [OrderController::class, 'seo'])->name('admin.seo');
+Route::post('/admin/seo/update', [OrderController::class, 'updateSeo'])->name('update.seo');
+
 
 
 

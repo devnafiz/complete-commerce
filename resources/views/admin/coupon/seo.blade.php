@@ -42,7 +42,7 @@
 							</div><!-- End column -->
 						</div><!-- end row -->
 						<div class="cruise-listing-form">
-							<form class="text-center" action="{{route('post.store')}}" method="POST" enctype="multipart/form-data">
+							<form class="text-center" action="{{route('update.seo')}}" method="POST" enctype="multipart/form-data">
 								@csrf
 
 								
@@ -111,7 +111,7 @@
 
 
 								
-
+                          <input type="hidden" name="id" value="{{$seo->id}}">
 
 								
 
